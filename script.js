@@ -21,194 +21,158 @@ const allInfos = {
                 
 }
 
+function start(){
+    let currentPage = window.location.href
+    if(currentPage.includes('home') || currentPage.includes('about') || currentPage.includes('services') || currentPage.includes('portfolio') || currentPage.includes('contact')){
+        onRefresh()
+    }else{
+        window.location = currentPage += '#home'
+        showHome()
+    }   
+
+}
+
+function onRefresh(){
+    let currentPage = window.location.href
+    window.location = currentPage.split('#')[0] + '#home'
+    showHome()
+}
+
 function clear(){
-    var bodyCard = document.getElementById('body-card');
-    bodyCard.lastElementChild.remove()
+    let content = document.getElementById('content')
+    content.innerHTML = ''
     
 }
 
 function showHome() {
-
     clear();
 
-    //renames the title
-    document.getElementById('title').innerHTML = "";
+    let headline = document.createElement('DIV')
+    headline.className = 'headline'
 
-    document.getElementById('header').style.backgroundPositionY = "0";
-    document.getElementById('header').style.height = "600px";
-    document.getElementById('header').style.marginBottom = "0";
+    let name = document.createElement('p')
+    name.className = 'gradient-text'
+    name.id = 'name'
+    name.innerHTML = 'GIOVANNI KASSIS'
 
-    var bodyCard = document.getElementById('body-card');
+    let title = document.createElement('p')
+    title.className = 'title'
+    title.innerHTML = 'SOFTWARE DEV'
 
-    //creates project section
-    var cardRow = document.createElement('div');
-    cardRow.className = "card-row";
+    let content = document.getElementById('content')
+    headline.appendChild(name)
+    headline.appendChild(title)
+    content.appendChild(headline)
 
-
-
-    bodyCard.append(cardRow)
 
 }
 
 function showAbout() {
+    clear();
+    
+
+}
+
+function showServices(){
+    clear();
+
+}
+
+function showPortfolio() {
 
     clear();
-    document.getElementById('header').style = ""
-    //renames the title
-    document.getElementById('title').innerHTML = "About";
-
-
-    var bodyCard = document.getElementById('body-card');
-
-    //creates project section
-    var aboutSection = document.createElement('div');
-    var aboutParagraph = document.createElement('p');
-    aboutSection.className = "about-section";
-    aboutParagraph.className = "about-paragraph";
     
-    aboutParagraph.innerHTML = "I'm a Computer Science student at Carleton University, with a focus on web and software development. My interests include Web, Software development, and security. I began programming in C and C++, then moved on to Python, currently the majority of my coursework is in Java and C++. At the moment, I'm studying operating systems and software development. When I'm not working on my studies, I'm looking to participate in hackathons and side projects";
-
-    aboutSection.append(aboutParagraph);
-    
-
-    //creates project row
-    var cardRow = document.createElement('div');
-    cardRow.className = "card-row";
-
-    for (const info in allInfos) {
-        
-        var column = document.createElement('div');
-        var card = document.createElement('div');
-        var infoTitle = document.createElement('h3');
-        var text = document.createElement('p');
-
-        
-        column.className = "card-column"
-        card.className = "card-card"
-        card.style.backgroundColor = '#1A1A1A'
-
-        infoTitle.innerHTML = allInfos[info].Title;
-        text.innerHTML = allInfos[info].Text;
-        text.style.fontSize = "14px"
-
-        cardRow.append(column);
-        column.append(card);
-        card.append(infoTitle)
-        card.append(text)
-
-    }
-    aboutSection.append(cardRow);
-    bodyCard.append(aboutSection)
-
-
 }
 
-function showProjects() {
-
+function showContact(){
     clear();
-    document.getElementById('header').style = ""
-    //renames the title
-    document.getElementById('title').innerHTML = "Projects";
+
+}
 
 
-    var bodyCard = document.getElementById('body-card');
+function prevPage(){
+    let currentPage = window.location.href    
 
-    //creates project row
-    var cardRow = document.createElement('div');
-    cardRow.className = "card-row";
+    if(currentPage.includes('home')){
+        window.location = currentPage.replace('#home', '#contact')
+        showContact()
 
-    for (const project in allProjects) {
+    }else if(currentPage.includes('about')){
+        window.location = currentPage.replace('#about', '#home')
+        showHome()
 
-        
-        var column = document.createElement('div');
-        var card = document.createElement('div');
+    }else if(currentPage.includes('services')){
+        window.location = currentPage.replace('#services', '#about')
+        showAbout()
 
-        
-        column.className = "card-column"
-        column.id = "card-column " + project.charAt(7)
-        column.style.background = 'url('+allProjects[project].ImageURL+') no-repeat center'
-        column.style.backgroundSize = '100% 100%'
-        card.className = "card-card"
-        card.id = "card-card" + project.charAt(7)
-        card.style.height='200px';
+    }else if(currentPage.includes('portfolio')){
+        window.location = currentPage.replace('#portfolio', '#services')
+        showServices()
 
-        cardRow.append(column);
-        column.append(card);
+    }else if(currentPage.includes('contact')){
+        window.location = currentPage.replace('#contact', '#portfolio')
+        showPortfolio()
 
+    }else{
+        console.log('unkown')
     }
 
-    bodyCard.append(cardRow)
-    
 }
 
-function showMore() {
+function nextPage(){
+    let currentPage = window.location.href
 
-    document.getElementById('header').style = ""
+    if(currentPage.includes('home')){
+        window.location = currentPage.replace('#home', '#about')
+        showAbout()
 
-    //renames the title
-    var header = document.getElementById('header');
+    }else if(currentPage.includes('about')){
+        window.location = currentPage.replace('#about', '#services')
+        showServices()
 
-    header.classList.toggle('flip');
+    }else if(currentPage.includes('services')){
+        window.location = currentPage.replace('#services', '#portfolio')
+        showPortfolio()
 
-    //header.style.backgroundImage = 'url(static/dropImg.png)';
+    }else if(currentPage.includes('portfolio')){
+        window.location = currentPage.replace('#portfolio', '#contact')
+        showContact()
 
-    
+    }else if(currentPage.includes('contact')){
+        window.location = currentPage.replace('#contact', '#home')
+        showHome()
 
-}
-
-function onProject(id){
-    var card = document.getElementById('card-card'+id);
-    card.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-
-    var projectTitle = document.createElement('h3');
-    var text = document.createElement('p');
-    var tech = document.createElement('p');
-
-    projectTitle.innerHTML = allProjects['Project'+id].Title;
-    text.innerHTML = allProjects['Project'+id].Text;
-    tech.innerHTML = allProjects['Project'+id].Tech;
-
-    projectTitle.style.pointerEvents = 'none'
-    text.style.pointerEvents = 'none'
-    tech.style.pointerEvents = 'none'
-
-    while (card.firstChild) {
-        card.removeChild(card.lastChild);
-        
+    }else{
+        console.log('unkown')
     }
+}   
 
-    card.append(projectTitle);
-    card.append(text);
-    card.append(tech);
-
-}
-
-function offProject(id){
-    var card = document.getElementById('card-card'+id)
-    card.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-
-    while (card.firstChild) {
-        card.removeChild(card.lastChild);
-        
-    }
-}
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('home').addEventListener('click',showHome);
-    document.getElementById('about').addEventListener('click',showAbout);
-    document.getElementById('projects').addEventListener('click',showProjects);
-    document.getElementById('more').addEventListener('click',showMore);
+    document.getElementById('nextButton').addEventListener('click', nextPage);
+    document.getElementById('prevButton').addEventListener('click', prevPage);
 
-    document.addEventListener('mouseover', function(e){     
-        if(e.target.id.toString().includes('card-card')){
-            onProject(e.target.id.toString().charAt(e.target.id.toString().length-1));
-        }
-      });
+    window.addEventListener("unload", function(reload) {
+        let currentPage = window.location.href
+        window.location = currentPage.split('#')[0] + '#home'
+   });
 
-      document.addEventListener('mouseout', function(e){     
-        if(e.target.id.toString().includes('card-card')){
-            offProject(e.target.id.toString().charAt(e.target.id.toString().length-1));
-        }
-      });
+    // document.getElementById('home').addEventListener('click',showHome);
+    // document.getElementById('about').addEventListener('click',showAbout);
+    // document.getElementById('services').addEventListener('click',showServices);
+    // document.getElementById('portfolio').addEventListener('click',showPortfolio);
+    // document.getElementById('contact').addEventListener('click',showContact);
+
+    // document.addEventListener('mouseover', function(e){     
+    //     if(e.target.id.toString().includes('card-card')){
+    //         onProject(e.target.id.toString().charAt(e.target.id.toString().length-1));
+    //     }
+    //   });
+
+    //   document.addEventListener('mouseout', function(e){     
+    //     if(e.target.id.toString().includes('card-card')){
+    //         offProject(e.target.id.toString().charAt(e.target.id.toString().length-1));
+    //     }
+    //   });
 });

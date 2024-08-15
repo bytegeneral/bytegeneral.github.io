@@ -1,0 +1,162 @@
+
+
+.container{
+  display:inline-flex;
+  flex-wrap:wrap;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 4%;
+  
+}
+
+.div1{
+  background-color:transparent;
+  width:50%;
+  height:auto;
+
+}
+
+.div2{
+  background-color:transparent;
+  width:49%;
+  height:auto;
+  
+}
+
+#pfp{
+  border: 1px solid #0f0;
+  border-radius: 12px;
+  margin: auto;
+
+}
+
+.langBox{
+  color: #0f0;
+  background-color:rgba(0, 255, 0, 0.247);
+  padding: 1%;
+  margin: 0.5%;
+  cursor: pointer;
+  border-radius: 7px;
+
+}
+
+#t00, #t01, #t02{
+  margin-top: 3%;
+  font-size: 20px;
+  
+}
+
+#hire, #resume {
+  display: inline-block; /* Place buttons side by side */
+  margin: 6px; 
+  padding: 10px 20px; 
+  background-color: rgba(0, 255, 0, 0.247); 
+  color: #0f0; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center; /* Center text inside the button */
+}
+
+#hire:hover, #resume:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px) {
+.container{
+  flex-direction:column;
+  }
+.div1{
+  width:100%;
+  height:auto;
+  }
+.div2{
+    width:100%;
+    height:auto;
+}
+
+  
+}
+
+
+
+
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the columns */
+  gap: 20px; /* Space between columns */
+  margin-right: 0; /* Remove right margin */
+  margin-left: 0; /* Remove left margin */
+  padding: 0; /* Remove padding */
+}
+
+.column {
+  flex: 1 1 30%; /* Flexible width, can shrink and grow */
+  max-width: 31%;
+  padding: 12px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+@media screen and (max-width: 2000px) {
+  .column {
+    flex: 1 1 47%; /* Adjust width for large screens */
+    max-width: 31%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .column {
+    flex: 1 1 46%; /* Adjust width for medium-large screens */
+    max-width: 46%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .column {
+    flex: 1 1 100%; /* Full width for smaller screens */
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 1 1 100%; /* Full width for small screens */
+    max-width: 100%;
+    margin-bottom: 20px; /* Space between rows */
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 7px;
+}
+
+
+
+#serviceImage{
+  width: 30%;
+}
+
+
+/*scroll bar*/
+body::-webkit-scrollbar{
+    width: 10px;
+    display: none;
+  }
+  body::-webkit-scrollbar-track{
+    background: #212121; 
+  }
+  body::-webkit-scrollbar-thumb{
+    background-color: #a0a0a0;   
+    border-radius: 20px;       
+    border: 3px solid #212121;
+  }

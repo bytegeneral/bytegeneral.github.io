@@ -1,6 +1,6 @@
 html{
     scroll-behavior:smooth;
-    background-color: #0f0f0f;
+    background-color: black;
     overflow-x: hidden;
 }
 
@@ -8,6 +8,7 @@ html{
 /*scroll bar*/
 body::-webkit-scrollbar{
     width: 10px;
+    display: none;
   }
   body::-webkit-scrollbar-track{
     background: #212121; 
@@ -21,8 +22,9 @@ body::-webkit-scrollbar{
 
 body{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: black;
-  /* background-image: url(static/pyramids.jpeg); */
+  background-image: url(https://i.pinimg.com/originals/46/72/d8/4672d86fa0676442108247fabd4fed35.jpg); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -33,109 +35,92 @@ body{
 }
 
 
-p{
-  color: #8E8E8E;
-}
-
-
-.pfp{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
-
-.socials{
-  width: 100%;
-  height: auto;
-  padding-top: 4%;
-  word-spacing: 15px;
-  text-align: center;
-  position: relative;
-    
-}
-
-.body-row{
-  margin: 2%;
-  margin-right: 0;
-  margin-top: 0;
-}
-
-.leftcolumn {
-  float: left;
-  width: 25%;
-}
-
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 75%;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.flip{
-  transition: 0.7s ease-in-out;
-  transform: rotateY(360deg);
-}
-
-
-/* header image */
-.header {
-  width: 100%;
-  height: auto;
-  background: url(static/pyramids.jpeg) no-repeat center;
-  background-position-y: -170;
-  background-size:cover;
-  border-radius: 20px;
-  padding-bottom: 2px;
-  margin-bottom: 5%;
-  overflow: hidden;
-}
-
-.home-header{
-  height: 600px;
-  background-position-y: 0;
-  margin-bottom: 0;
-
-}
-
-.headline {
-  padding-left: 5%;
-  width: 100%;
-  text-align: left;
-  display: block;
-}
-
-/* Add a card effect for articles */
-.body-card {
-  background-color: #121212;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 20px;
-}
-
-/* Clear floats after the columns */
-.body-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Footer */
-.footer {
+.nav {
   border-radius: 20px;
   margin: 2%;
-  padding: 20px;
-  text-align: center;
-  background: #121212;
-  margin-top: 20px;
+  padding: 10px;
+  text-align: right;
+  margin-top: 10px;
   margin-bottom: 2%;
 }
 
+.logo{
+  align-self: left;
+  margin-right: 40%;
+}
+
+
+.headline {
+  margin-top: 12%;
+  width: 100%;
+  text-align: center;
+  display: block;
+  padding-bottom: 5%;
+}
+
+#name{
+  font-size: 70px;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 35px;
+}
+
+.title{
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 25px;
+}
+
+.cycleButtons{
+  margin-top: 0%;
+  width: 100%;
+  text-align: center;
+  display: block;
+  padding-bottom: 5%;
+
+}
+
+.navButton{
+  margin: 1%;
+  margin-top: 11%;
+  border-color: #FFD700;
+  border-style: solid;
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 100%;
+
+}
+
+#prevButton {
+  background: linear-gradient(to left, #d3b300 0%, #FFD700 50%, transparent 50%, transparent 100%);
+  background-size: 200% 100%;
+  background-position: 0 0;
+  transition: background-position 0.3s;
+}
+
+#nextButton {
+  background: linear-gradient(to right, #d3b300 0%, #FFD700 50%, transparent 50%, transparent 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s;
+}
+
+#prevButton:hover {
+  background-position: 100% 0;
+  cursor: pointer;
+}
+
+#nextButton:hover {
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+
+
 .gradient-text{
-  font-family:"Abril Fatface", sans-serif;
-  background: linear-gradient(to right, #803ca8, pink,#f7858d);
+  font-family:'Times New Roman', Times, serif;
+  background: linear-gradient( #FFD700,#d3b300,#363636);
   background-size: 200% 200%;
   animation: rainbow 2s ease-in-out infinite;
   background-clip: text;
@@ -144,9 +129,11 @@ p{
   text-align:center;
   transition: color .2s ease-in-out;
   text-transform:uppercase;
+  letter-spacing: 3px;
   font-weight:900;
   font-size: large;
   margin: 2%;
+  
 }
 
 .gradient-text:hover{
@@ -162,54 +149,23 @@ p{
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {
-    width: 100%;
-    padding: 0;
+
+  .nav{
+    display: none;
   }
-}
 
 
-
-/* Float four columns side by side */
-.card-column {
-  border-radius: 20px;
-  float: left;
-  width: calc(33% - 40px); 
-  margin: 20px; 
-  
-}
-
-/* Remove extra left and right margins, due to padding in columns */
-.card-row {
-  max-height: 230px; /* Set the maximum height for vertical scrolling */
-  overflow-y: auto; 
-  border-radius: 20px;
-}
-
-/* Clear floats after the columns */
-.card-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the counter cards */
-.card-card {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 12px;
-  text-align: left;
-  background-color: transparent;
-  
-}
-
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .card-column {
-    width: calc(100% - 40px); 
-    display: block;
-    margin-bottom: 20px;
+  #name{
+    font-size: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 20px;
   }
+
+  .title{
+    font-size: 70%;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 5px;
+  }
+
+
 }
