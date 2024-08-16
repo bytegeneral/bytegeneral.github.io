@@ -35,7 +35,6 @@ function typeWriter(elementId, txt, callback) {
 }
 
 function onStart() {
-  // Array of messages and corresponding element IDs
   
 
   let textTerminal = document.getElementById('textTerminal');
@@ -79,7 +78,10 @@ function addText(where, textArr, callback) {
     }else if(newLine.id.includes('text')){
       newLine.style.fontSize = '14px'
     }
+
     textTerminal.appendChild(newLine);
+
+    
     
     
   });
@@ -99,8 +101,12 @@ function addText(where, textArr, callback) {
 }
 
 function showAbout() {
+
+  let title = document.getElementById('terminalTitle')
+  title.innerHTML = 'About'
+
   messages = [
-    { id: 'msg1', text: 'About' },
+    { id: 'msg1', text: '' },
     { id: 'msg2', text: 'Name: GIOVANNI KASSIS' },
     { id: 'msg3', text: 'Sex: MALE' },
     { id: 'msg4', text: 'ALMA MATER: Carleton University' },
@@ -142,20 +148,32 @@ function showAbout() {
   document.getElementById('pfp').style.display = 'block';
 
   let services1 = [
-    { id: 'service1-title', text: 'Software Development'},
-    { id: 'service1-text', text: 'Building robust desktop applications using languages like C++, Java, or Python'},]
-  let services2 = [ { id: 'service2-title', text: 'Web Development'},
-    { id: 'service2-text', text: 'Full-stack development using technologies like HTML, CSS, JavaScript, React, Angular, Node.js'},]
-  let services3 = [ { id: 'service3-title', text: 'Software Consulting' },
-    { id: 'service3-text', text: 'Providing strategic advice on technology adoption, system architecture, and digital transformation'},]
-  let services4 = [ { id: 'service4-title', text: 'Database Management' },
-    { id: 'service4-text', text: 'Designing and managing databases like PostgreSQL and MongoDB'},]
-  let services5 = [ { id: 'service5-title', text: 'Cybersecurity' },
-    { id: 'service5-text', text: 'Conducting security assessments and penetration testing to identify vulnerabilities. Securing applications, databases and authentication'},]
-  let services6 = [  { id: 'service6-title', text: 'Tutoring' },
-    { id: 'service6-text', text: 'Basics of programming in languages like Python, Java, C++, or JavaScript. Understanding algorithms, data structures, and object-oriented programming'},]
+    { id: 'service1-title', text: 'Front-End' },
+    { id: 'service1-text1', text: 'React/Angular' },
+    { id: 'service1-text2', text: 'Javascript' },
+    { id: 'service1-text3', text: 'Node.js' },
+    { id: 'service1-text4', text: 'HTML/CSS/SASS' },
+  ];
+  
+  let services2 = [
+    { id: 'service2-title', text: 'Back-End' },
+    { id: 'service2-text1', text: 'Express.js' },
+    { id: 'service2-text2', text: 'PostgresSQL' },
+    { id: 'service2-text3', text: 'MongoDB' },
+    { id: 'service2-text4', text: 'REST APIs' },
+  ];
+  
+  let services3 = [
+    { id: 'service3-title', text: 'Others' },
+    { id: 'service3-text1', text: 'Git/Github' },
+    { id: 'service3-text2', text: 'C/C++/Python/Java' },
+    { id: 'service3-text3', text: 'Linux/Shell-Script' },
+    { id: 'service3-text4', text: 'Cloud Computing' },
+  ];
+  
 
-
+  let skillTitle = [{ id: 'skills-title', text: 'SKILLS' },];
+  addText('sk-title', skillTitle, function() {
       addText('service1', services1, function() {
         let serviceImage = document.createElement('img')
         serviceImage.src = 'static/software.png'
@@ -186,53 +204,15 @@ function showAbout() {
       
             // Insert the image after the first child
             serviceElement.insertBefore(serviceImage, firstChild.nextSibling);
-
-            addText('service4', services4, function() {
-              let serviceImage = document.createElement('img')
-              serviceImage.src = 'static/databases.png'
-              serviceImage.id = 'serviceImage'
-              let serviceElement = document.getElementById('service4');
-              let firstChild = serviceElement.firstChild;
-      
-              // Insert the image after the first child
-              serviceElement.insertBefore(serviceImage, firstChild.nextSibling);
-
-              addText('service5', services5, function() {
-                let serviceImage = document.createElement('img')
-                serviceImage.src = 'static/cybersecurity.png'
-                serviceImage.id = 'serviceImage'
-                let serviceElement = document.getElementById('service5');
-                let firstChild = serviceElement.firstChild;
-                
-                // Insert the image after the first child
-                serviceElement.insertBefore(serviceImage, firstChild.nextSibling);
-
-                addText('service6', services6, function() {
-                  let serviceImage = document.createElement('img')
-                  serviceImage.src = 'static/tutoring.png'
-                  serviceImage.id = 'serviceImage'
-                  document.getElementById('service6').appendChild(serviceImage)
-                  let serviceElement = document.getElementById('service6');
-                  let firstChild = serviceElement.firstChild;
-              
-                  // Insert the image after the first child
-                  serviceElement.insertBefore(serviceImage, firstChild.nextSibling);
-                  
-                 //button to hire
-                  let button = document.createElement('button')
-                  button.id = 'hire'
-                  button.innerHTML = 'Hire Me'
-                  
-                  document.getElementById('terminalBody').appendChild(button)
-                });
-              });
-            });
           });
         });
       });
+    });
 }
 
 function showServices(){
+  let title = document.getElementById('terminalTitle')
+  title.innerHTML = 'Services'
 
   let services1 = [
     { id: 'service1-title', text: 'Software Development'},
@@ -324,6 +304,76 @@ function showServices(){
         });
       });
 
+
+}
+
+function showPrjDesc(prj){
+  
+  let prjElement = document.getElementById(prj);
+  console.log(prjElement)
+  prjElement.children[0].style.display = 'block'
+  prjElement.children[0].style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
+
+  prjElement.addEventListener('mouseleave', function(e){     
+
+    prjNormal(e.target.id)
+  });
+
+}
+
+function prjNormal(prj){
+  let prjElement = document.getElementById(prj);
+  prjElement.children[0].style.display = 'none'
+  prjElement.children[0].backgroundColor = 'transparent'
+}
+
+function showPortfolio(){
+
+  let projects = [
+    { id: 'project1', text: 'Software simulation of an AED device analyzing heart rhythms and providing electric shocks', title: 'AED', img: 'static/aed.jpeg', projectLink: 'https://github.com/g-kassis/AED'},
+    { id: 'project2', text: 'Web Application using API to retrieve information on a given TV show' , title: 'Movies DB', img: 'static/movieDB.png', projectLink: 'https://github.com/g-kassis/imdbClone'},
+    { id: 'project3', text: 'AI model classifying marine mammals from sound data' , title: 'Project Dory', img: 'static/dory.jpeg', projectLink: ''},
+    { id: 'project4', text: 'Personal Website/Portfolio' , title: 'Personal Website', img: 'static/pyramids.jpeg', projectLink: 'https://github.com/g-kassis/Website'},
+    { id: 'project5', text: 'A Health and Fitness Club web application using PostgreSQL, Javascript, HTML and CSS' , title: 'Health and Fitness Club', img: 'static/fitness.jpg', projectLink: 'https://github.com/g-kassis/Health-and-Fitness-Club-Management-System'},
+    { id: 'project6', text: '3D Simulation for brain shift using Python, PyVista and NumPy', title: 'Project Brainiac', img: 'static/brainiac.jpg', projectLink: 'https://github.com/g-kassis/Project-Brainiac'},
+  ];
+
+  projects.forEach(prj => {
+    let col = document.createElement('div');
+    col.className = 'column';
+    col.id = prj.id
+    col.style.borderRadius = '7px';
+    col.style.border = '1px solid #0f0';
+    col.style.backgroundImage = `url(${prj.img})`;
+    col.style.backgroundRepeat = 'no-repeat';
+    col.style.backgroundPosition = 'center';
+    col.style.backgroundSize = 'cover';
+    col.style.height = '190px'
+
+    let overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.innerHTML = `<h3>${prj.title}</h3><p>${prj.text}</p>`;
+    overlay.style.display = 'none'
+
+    let githubImg = document.createElement('img');
+    let link = document.createElement('a')
+    link.href = prj.projectLink
+    githubImg.src = 'static/githubW.png'
+    githubImg.id = prj.id + 'Github'
+    githubImg.className = 'gitLink'
+    githubImg.style.width = '30px'
+    // githubImg.style.float = 'right'
+    githubImg.style.margin ='auto'
+
+    link.append(githubImg)
+    overlay.append(link)
+
+    
+
+    col.appendChild(overlay);
+
+    document.getElementsByClassName('row')[0].appendChild(col)
+  });
 
 }
 
@@ -379,6 +429,13 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       //portfolio page
+      document.addEventListener('mouseover', function(e){     
+        if(e.target.id.includes('project')){
+            showPrjDesc(e.target.id)
+        }
+      });
+
+     
 
 
       //contact Page

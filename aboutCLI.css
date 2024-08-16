@@ -5,7 +5,7 @@
   flex-wrap:wrap;
   width: 100%;
   flex-direction: row;
-  margin-bottom: 4%;
+  margin-bottom: 5%;
   
 }
 
@@ -75,13 +75,15 @@
 .div2{
     width:100%;
     height:auto;
+    text-align: center;
 }
 
   
 }
 
-
-
+#sk-title{
+  text-align: center;
+}
 
 
 
