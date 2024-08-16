@@ -119,13 +119,13 @@
 
   #linkedIn:hover{
     cursor: pointer;
-    background-color: #0f0;
+    /* background-color: #0f0; */
     transform: scale(1.1);
   }
 
   #github:hover{    
     cursor: pointer;
-    background-color: #0f0;
+    /* background-color: #0f0; */
     transform: scale(1.1);
   }
   
