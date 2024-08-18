@@ -21,23 +21,38 @@ const allInfos = {
                 
 }
 
-function start(){
-    let currentPage = window.location.href
-    if(currentPage.includes('home') || currentPage.includes('about') || currentPage.includes('services') || currentPage.includes('portfolio') || currentPage.includes('contact')){
-        onRefresh()
-    }else{
-        window.location = currentPage += '#home'
-        showHome()
-    }   
+//walpaper randomizer
+window.onload = wallpaperRandomizer;
 
+
+let wallpapers = [
+    { url: 'static/pxfuel1.jpg' },
+    { url: 'static/pxfuel2.jpg' },
+    //{ url: '' },
+    { url: 'static/wallpaper4.jpg' },
+];
+
+function getRandomElement(arr) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex];
 }
 
-function onRefresh(){
-    let currentPage = window.location.href
-    window.location = currentPage.split('#')[0] + '#home'
-    showHome()
+function wallpaperRandomizer() {
+    let selectedWallpaper = getRandomElement(wallpapers);
+    //document.body.style.backgroundImage = `url(${selectedWallpaper.url})`;
+    document.getElementById('home').style.backgroundImage = `url(${selectedWallpaper.url})`;
+    selectedWallpaper = getRandomElement(wallpapers);
+    document.getElementById('about').style.backgroundColor = `#1e1e1e`;
+    selectedWallpaper = getRandomElement(wallpapers);
+    document.getElementById('services').style.backgroundColor = `#1e1e1e`;
+    selectedWallpaper = getRandomElement(wallpapers);
+    document.getElementById('portfolio').style.backgroundColor = `#1e1e1e`;
+    selectedWallpaper = getRandomElement(wallpapers);
+    document.getElementById('contact').style.backgroundColor = `#1e1e1e`;
 }
 
+
+//
 function clear(){
     let content = document.getElementById('content')
     content.innerHTML = ''
@@ -47,23 +62,6 @@ function clear(){
 function showHome() {
     clear();
 
-    let headline = document.createElement('DIV')
-    headline.className = 'headline'
-
-    let name = document.createElement('p')
-    name.className = 'gradient-text'
-    name.id = 'name'
-    name.innerHTML = 'GIOVANNI KASSIS'
-
-    let title = document.createElement('p')
-    title.className = 'title'
-    title.innerHTML = 'SOFTWARE DEV'
-
-    let content = document.getElementById('content')
-    headline.appendChild(name)
-    headline.appendChild(title)
-    content.appendChild(headline)
-
 
 }
 
@@ -72,6 +70,56 @@ function showAbout() {
     
 
 }
+
+function showSkills(){
+
+    let projects = [
+      { id: 'project1', text: 'Software simulation of an AED device analyzing heart rhythms and providing electric shocks', title: 'AED', img: 'static/aed.jpeg', projectLink: 'https://github.com/g-kassis/AED'},
+      { id: 'project2', text: 'Web Application using API to retrieve information on a given TV show' , title: 'Movies DB', img: 'static/movieDB.png', projectLink: 'https://github.com/g-kassis/imdbClone'},
+      { id: 'project3', text: 'AI model classifying marine mammals from sound data' , title: 'Project Dory', img: 'static/dory.jpeg', projectLink: ''},
+      { id: 'project4', text: 'Personal Website/Portfolio' , title: 'Personal Website', img: 'static/pyramids.jpeg', projectLink: 'https://github.com/g-kassis/g-kassis.github.io'},
+      { id: 'project5', text: 'A Health and Fitness Club web application using PostgreSQL, Javascript, HTML and CSS' , title: 'Health and Fitness Club', img: 'static/fitness.jpg', projectLink: 'https://github.com/g-kassis/Health-and-Fitness-Club-Management-System'},
+      { id: 'project6', text: '3D Simulation for brain shift using Python, PyVista and NumPy', title: 'Project Brainiac', img: 'static/brainiac.jpg', projectLink: 'https://github.com/g-kassis/Project-Brainiac'},
+    ];
+  
+    projects.forEach(prj => {
+      let col = document.createElement('div');
+      col.className = 'column';
+      col.id = prj.id
+      col.style.borderRadius = '7px';
+      col.style.border = '1px solid #0f0';
+      col.style.backgroundImage = `url(${prj.img})`;
+      col.style.backgroundRepeat = 'no-repeat';
+      col.style.backgroundPosition = 'center';
+      col.style.backgroundSize = 'cover';
+      col.style.height = '190px'
+  
+      let overlay = document.createElement('div');
+      overlay.className = 'overlay';
+      overlay.innerHTML = `<h3>${prj.title}</h3><p>${prj.text}</p>`;
+      overlay.style.display = 'none'
+  
+      let githubImg = document.createElement('img');
+      let link = document.createElement('a')
+      link.href = prj.projectLink
+      githubImg.src = 'static/githubW.png'
+      githubImg.id = prj.id + 'Github'
+      githubImg.className = 'gitLink'
+      githubImg.style.width = '30px'
+      // githubImg.style.float = 'right'
+      githubImg.style.margin ='auto'
+  
+      link.append(githubImg)
+      overlay.append(link)
+  
+      
+  
+      col.appendChild(overlay);
+  
+      document.getElementsByClassName('row')[0].appendChild(col)
+    });
+  
+  }
 
 function showServices(){
     clear();
@@ -90,73 +138,10 @@ function showContact(){
 }
 
 
-function prevPage(){
-    let currentPage = window.location.href    
-
-    if(currentPage.includes('home')){
-        window.location = currentPage.replace('#home', '#contact')
-        showContact()
-
-    }else if(currentPage.includes('about')){
-        window.location = currentPage.replace('#about', '#home')
-        showHome()
-
-    }else if(currentPage.includes('services')){
-        window.location = currentPage.replace('#services', '#about')
-        showAbout()
-
-    }else if(currentPage.includes('portfolio')){
-        window.location = currentPage.replace('#portfolio', '#services')
-        showServices()
-
-    }else if(currentPage.includes('contact')){
-        window.location = currentPage.replace('#contact', '#portfolio')
-        showPortfolio()
-
-    }else{
-        console.log('unkown')
-    }
-
-}
-
-function nextPage(){
-    let currentPage = window.location.href
-
-    if(currentPage.includes('home')){
-        window.location = currentPage.replace('#home', '#about')
-        showAbout()
-
-    }else if(currentPage.includes('about')){
-        window.location = currentPage.replace('#about', '#services')
-        showServices()
-
-    }else if(currentPage.includes('services')){
-        window.location = currentPage.replace('#services', '#portfolio')
-        showPortfolio()
-
-    }else if(currentPage.includes('portfolio')){
-        window.location = currentPage.replace('#portfolio', '#contact')
-        showContact()
-
-    }else if(currentPage.includes('contact')){
-        window.location = currentPage.replace('#contact', '#home')
-        showHome()
-
-    }else{
-        console.log('unkown')
-    }
-}   
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('nextButton').addEventListener('click', nextPage);
-    document.getElementById('prevButton').addEventListener('click', prevPage);
 
-    window.addEventListener("unload", function(reload) {
-        let currentPage = window.location.href
-        window.location = currentPage.split('#')[0] + '#home'
-   });
 
     // document.getElementById('home').addEventListener('click',showHome);
     // document.getElementById('about').addEventListener('click',showAbout);
@@ -164,15 +149,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // document.getElementById('portfolio').addEventListener('click',showPortfolio);
     // document.getElementById('contact').addEventListener('click',showContact);
 
-    // document.addEventListener('mouseover', function(e){     
-    //     if(e.target.id.toString().includes('card-card')){
-    //         onProject(e.target.id.toString().charAt(e.target.id.toString().length-1));
-    //     }
-    //   });
+    //social on home page
+    document.addEventListener('click', function(e){     
+        if(e.target.id == 'linkedIn'){
+          window.location = 'https://www.linkedin.com/in/giovanni-kassis'
+        }
+      });
 
-    //   document.addEventListener('mouseout', function(e){     
-    //     if(e.target.id.toString().includes('card-card')){
-    //         offProject(e.target.id.toString().charAt(e.target.id.toString().length-1));
-    //     }
-    //   });
+      document.addEventListener('click', function(e){ 
+        if(e.target.id == 'github'){
+          window.location = 'https://github.com/g-kassis'
+        }
+      });
+
 });

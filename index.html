@@ -6,39 +6,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="contact.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="static/favicon.png">
 
 
 </head>
 
-<body onload="start()">
-
-  <div class="curtain">
-    <div class="nav">
-      <img src="static/favicon.png" class="logo">
-      <a href="#home" class="gradient-text">HOME</a>
-      <a href="#about" class="gradient-text">ABOUT</a>
-      <a href="#services" class="gradient-text">SERVICES</a>
-      <a href="#portfolio" class="gradient-text">PORTFOLIO</a>
-      <a href="#contact" class="gradient-text">CONTACT</a>
-    </div>
-
-    <div class="content" id="content">
+<body>
   
+      
+  <div id="home">
+      <div id="curtain" class="curtain">
+        <div class="homeHeadline">
+          <p class="gradient-text" id="name">GIOVANNI KASSIS</p>
+          <p class="title">SOFTWARE DEV</p>
+          <div class="socials" id="social-contact" style="margin-top: 2%;">
+            <img id="linkedIn" src="static/Linkedin.png">
+            <img id="github" src="static/githubW.png">
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="about">
+    <div id="curtain" class="curtain">
       <div class="headline">
-        <p class="gradient-text" id="name">GIOVANNI KASSIS</p>
-        <p class="title">SOFTWARE DEV</p>
+        <p class="gradient-text" id="sectionTitle">About</p>
+        <p class="sectionText">Over a long professional and academic journey, I have acquired a diverse set of tools and skills, 
+          ranging from programming languages to specialized technologies. This arsenal allows me to tackle complex challenges, 
+          create innovative solutions, and continuously push the boundaries of what's possible in the world of software development.
+        </p>
+        <div class="container" id="container"> 
+
+          <div class="div1" id='left'>
+            <img src="static/memoji.png" width="60%" id="pfp">
+                
+          </div>
+          
+          <div class="div2" id="right">
+            
+            <button id="hire">Hire Me</button>
+            <button id="resume">Download CV</button>
+          </div>
+        </div>
+        
+        <p class="gradient-text" id="sectionTitle">WHAT I KNOW?</p>
+        <p class="sectionText">Over a long professional and academic journey, I have acquired a diverse set of tools and skills, 
+          ranging from programming languages to specialized technologies. This arsenal allows me to tackle complex challenges, 
+          create innovative solutions, and continuously push the boundaries of what's possible in the world of software development.
+        </p>
+
+        <div class="row">
+          <div class="column" >
+            <div class="card" id="service1">
+              <img class="serviceImg" src="static/c.png" alt="">
+            </div>
+          </div>
+        
+          <div class="column">
+            <div class="card" id="service2">
+              <img class="serviceImg" src="static/c++.png" alt="">
+            </div>
+          </div>
+          
+          <div class="column" >
+            <div class="card" id="service3">
+              <img class="serviceImg" src="static/python.png" alt="">
+            </div>
+          </div>
+          
+          <div class="column" >
+            <div class="card" id="service4">
+              <img class="serviceImg" src="static/java.png" alt="">
+            </div>
+          </div>
+
+          <div class="column" >
+            <div class="card" id="service5">
+              <img class="serviceImg" src="static/javascript.png" alt="">
+            </div>
+          </div>
+
+          <div class="column" >
+              <div class="card" id="service6">
+                <img class="serviceImg" src="static/html.png" alt="">
+              </div>
+          </div>
+
+          <div class="column" >
+            <div class="card" id="service7">
+              <img class="serviceImg" src="static/css.png" alt="">
+            </div>
+          </div>
+
+      </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; align-items: center;">
+      <label for="filter" class="switch" aria-label="Toggle Filter">
+        <input type="checkbox" id="filter" />
+        <span>Programming</span>
+        <span>Tools</span>
+      </label>
       </div>
       
-    </div>
-    
-    <div class="cycleButtons">
-      <button class="navButton" id="prevButton"><</button>
-      <button class="navButton" id="nextButton">></button>
+      </div>
     </div>
 
-  </div>
+    <div id="services">
+      <div id="curtain" class="curtain">
+        <div class="headline">
+          <p class="gradient-text" id="sectionTitle">MY SERVICES</p>
+          <p class="sectionText">Offering comprehensive software development services, including front-end and back-end development, database management, cybersecurity, and technical tutoring.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div id="portfolio">
+      <div id="curtain" class="curtain">
+        <div class="headline">
+          <p class="gradient-text" id="sectionTitle">PORTFOLIO</p>
+          <p class="sectionText">Showcasing a diverse range of projects that highlight proficiency in web development, software engineering, and system architecture. Each project reflects a strong commitment to detail and functionality.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div id="contact">
+      <div id="curtain" class="curtain">
+        <div class="headline">
+          <p class="gradient-text" id="sectionTitle">CONTACT ME</p>
+          <div class="terminal-body" id="terminalBody">
+    
+            <div class="container" id="container"> 
+            <div class="div1" id='left'>
+            <div class="screen-body-item left">
+
+                <div class="socials" id="social-contact">
+                    <img id="linkedIn" src="static/Linkedin.png" style="width: 10%;">
+                    <img id="github" src="static/githubW.png" style="width: 10%">
+                  </div>
+              </div>
+              
+              
+            </div>
+            
+            <div class="div2" id='right'>
+              <div class="screen-body-item">
+                <div class="app-form">
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="NAME">
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="EMAIL">
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="CONTACT NO">
+                  </div>
+                  <div class="app-form-group message">
+                    <input class="app-form-control" placeholder="MESSAGE">
+                  </div>
+                  <div class="app-form-group buttons">
+                    <button class="app-form-button" id="sendMail">SEND</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+  
     
 </body>
 
