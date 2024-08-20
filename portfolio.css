@@ -6,3 +6,92 @@
     background-attachment: fixed; 
     min-height: 100vh; 
   }
+
+
+  .row-portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the columns */
+    gap: 20px; /* Space between columns */
+    margin-right: 0; /* Remove right margin */
+    margin-left: 0; /* Remove left margin */
+    padding: 0; /* Remove padding */
+  }
+  
+  
+  
+  .column-portfolio {
+    flex: 1 1 30%; /* Flexible width, can shrink and grow */
+    max-width: 31%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+      padding: 1px;
+      overflow-y: scroll;
+  }
+  
+    /* Style the counter cards */
+    .card-portfolio {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: transparent;
+      border-radius: 7px;
+    }
+
+    /*scroll bar*/
+    .column-portfolio::-webkit-scrollbar{
+      width: 10px;
+      display: none;
+    }
+    .column-portfolio::-webkit-scrollbar-track{
+      background: #212121; 
+    }
+    .column-portfolio::-webkit-scrollbar-thumb{
+      background-color: #a0a0a0;   
+      border-radius: 20px;       
+      border: 3px solid #212121;
+    }
+  
+  
+  .overlay-portfolio{
+      padding: 12px;
+      width: auto;
+      height: 170px;
+  
+  }
+  
+  
+  
+  @media screen and (max-width: 2000px) {
+    .column-portfolio {
+      flex: 1 1 47%; /* Adjust width for large screens */
+      max-width: 31%;
+  
+    }
+  
+    
+  }
+  
+  @media screen and (max-width: 1400px) {
+    .column-portfolio {
+      flex: 1 1 46%; /* Adjust width for medium-large screens */
+      max-width: 46%;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .column-portfolio {
+      flex: 1 1 100%; /* Full width for smaller screens */
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .column-portfolio {
+      flex: 1 1 100%; /* Full width for small screens */
+      max-width: 100%;
+      margin-bottom: 20px; /* Space between rows */
+      
+    }
+  
+  }
+    

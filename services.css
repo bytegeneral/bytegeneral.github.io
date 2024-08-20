@@ -6,3 +6,76 @@
   background-attachment: fixed; 
   min-height: 100vh; 
 }
+
+
+.row-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the columns */
+  gap: 20px; /* Space between columns */
+  margin-right: 0; /* Remove right margin */
+  margin-left: 0; /* Remove left margin */
+  padding: 0; /* Remove padding */
+}
+
+.column-services {
+  flex: 1 1 30%; /* Flexible width, can shrink and grow */
+  max-width: 31%;
+  padding: 12px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+  
+  /* Style the counter cards */
+  .card-services{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 7px;
+  }
+
+  .serviceImage{
+    width: 25%;
+    margin: auto;
+  }
+
+  #serviceTitle{
+    font-weight:900;
+    font-size: 24px;
+  }
+
+  .serviceText{
+
+  }
+
+@media screen and (max-width: 2000px) {
+  .column-services {
+    flex: 1 1 31%; /* Adjust width for large screens */
+    max-width: 31%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .column-services {
+    flex: 1 1 46%; /* Adjust width for medium-large screens */
+    max-width: 46%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .column-services {
+    flex: 1 1 100%; /* Full width for smaller screens */
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .column-services {
+    flex: 1 1 100%; /* Full width for small screens */
+    max-width: 100%;
+    margin-bottom: 20px; /* Space between rows */
+  }
+}
+
+  

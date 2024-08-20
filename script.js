@@ -21,8 +21,13 @@ const allInfos = {
                 
 }
 
+function onStartup(){
+  wallpaperRandomizer();
+  showPortfolio()
+}
+
 //walpaper randomizer
-window.onload = wallpaperRandomizer;
+window.onload = onStartup;
 
 
 let wallpapers = [
@@ -52,26 +57,8 @@ function wallpaperRandomizer() {
 }
 
 
-//
-function clear(){
-    let content = document.getElementById('content')
-    content.innerHTML = ''
-    
-}
 
-function showHome() {
-    clear();
-
-
-}
-
-function showAbout() {
-    clear();
-    
-
-}
-
-function showSkills(){
+function showPortfolio(){
 
     let projects = [
       { id: 'project1', text: 'Software simulation of an AED device analyzing heart rhythms and providing electric shocks', title: 'AED', img: 'static/aed.jpeg', projectLink: 'https://github.com/g-kassis/AED'},
@@ -84,10 +71,10 @@ function showSkills(){
   
     projects.forEach(prj => {
       let col = document.createElement('div');
-      col.className = 'column';
+      col.className = 'column-portfolio';
       col.id = prj.id
       col.style.borderRadius = '7px';
-      col.style.border = '1px solid #0f0';
+      col.style.border = '1px solid rgba(255, 255, 255, 0.692)';
       col.style.backgroundImage = `url(${prj.img})`;
       col.style.backgroundRepeat = 'no-repeat';
       col.style.backgroundPosition = 'center';
@@ -95,7 +82,7 @@ function showSkills(){
       col.style.height = '190px'
   
       let overlay = document.createElement('div');
-      overlay.className = 'overlay';
+      overlay.className = 'overlay-portfolio';
       overlay.innerHTML = `<h3>${prj.title}</h3><p>${prj.text}</p>`;
       overlay.style.display = 'none'
   
@@ -116,38 +103,74 @@ function showSkills(){
   
       col.appendChild(overlay);
   
-      document.getElementsByClassName('row')[0].appendChild(col)
+      document.getElementsByClassName('row-portfolio')[0].appendChild(col)
     });
   
-  }
+}
 
-function showServices(){
-    clear();
+function showPrjDesc(prj){
+  
+  let prjElement = document.getElementById(prj);
+  console.log(prjElement)
+  prjElement.children[0].style.display = 'block'
+  prjElement.children[0].style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
+
+  prjElement.addEventListener('mouseleave', function(e){     
+
+    prjNormal(e.target.id)
+  });
 
 }
 
-function showPortfolio() {
+function prjNormal(prj){
+  let prjElement = document.getElementById(prj);
+  prjElement.children[0].style.display = 'none'
+  prjElement.children[0].backgroundColor = 'transparent'
+}
 
-    clear();
+let progArr = ['c.png','c++.png','python.png','java.png','javascript.png','html.png','css.png'];
+
+function showProgramming() {
+  for (let index = 1; index < 8; index++) {
+    document.getElementById('skill'+index).childNodes[1].src = 'static/' +progArr[index-1]
+    
+  }
     
 }
 
-function showContact(){
-    clear();
+let toolsArr = ['linux.png','git.png','githubW.png','node.png','postgres.png','mongodb.png','vscode.png'];
+
+function showTools(){
+  for (let index = 1; index < 8; index++) {
+    document.getElementById('skill'+index).childNodes[1].src = 'static/' +toolsArr[index-1]
+    
+  }
 
 }
 
-
+function handleSwitchToggle(event) {
+  // Log to console or perform desired actions
+  if (event.target.checked) {
+      console.log('Tools');
+      showTools()
+  } else {
+      console.log('Programming');
+      showProgramming()
+  }
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
 
 
-    // document.getElementById('home').addEventListener('click',showHome);
-    // document.getElementById('about').addEventListener('click',showAbout);
-    // document.getElementById('services').addEventListener('click',showServices);
-    // document.getElementById('portfolio').addEventListener('click',showPortfolio);
-    // document.getElementById('contact').addEventListener('click',showContact);
+
+
+    document.addEventListener('click', function(e){     
+      if(e.target.id == 'filter'){
+        console.log
+        handleSwitchToggle(e)
+      }
+    });
 
     //social on home page
     document.addEventListener('click', function(e){     
@@ -159,6 +182,20 @@ document.addEventListener('DOMContentLoaded', function () {
       document.addEventListener('click', function(e){ 
         if(e.target.id == 'github'){
           window.location = 'https://github.com/g-kassis'
+        }
+      });
+
+      //portfolio hover on project
+      document.addEventListener('mouseover', function(e){     
+        if(e.target.id.includes('project')){
+            showPrjDesc(e.target.id)
+        }
+      });
+
+      //on vaultboy click
+      document.addEventListener('click', function(e){ 
+        if(e.target.id == 'vaultBoy'){
+          window.location = 'https://g-kassis.github.io/terminalCLI.html'
         }
       });
 

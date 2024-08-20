@@ -53,6 +53,8 @@
           </div>
           
           <div class="div2" id="right">
+
+
             
             <button id="hire">Hire Me</button>
             <button id="resume">Download CV</button>
@@ -67,44 +69,44 @@
 
         <div class="row">
           <div class="column" >
-            <div class="card" id="service1">
-              <img class="serviceImg" src="static/c.png" alt="">
+            <div class="card" id="skill1">
+              <img class="skillImg" src="static/c.png" alt="">
             </div>
           </div>
         
           <div class="column">
-            <div class="card" id="service2">
-              <img class="serviceImg" src="static/c++.png" alt="">
+            <div class="card" id="skill2">
+              <img class="skillImg" src="static/c++.png" alt="">
             </div>
           </div>
           
           <div class="column" >
-            <div class="card" id="service3">
-              <img class="serviceImg" src="static/python.png" alt="">
+            <div class="card" id="skill3">
+              <img class="skillImg" src="static/python.png" alt="">
             </div>
           </div>
           
           <div class="column" >
-            <div class="card" id="service4">
-              <img class="serviceImg" src="static/java.png" alt="">
+            <div class="card" id="skill4">
+              <img class="skillImg" src="static/java.png" alt="">
             </div>
           </div>
 
           <div class="column" >
-            <div class="card" id="service5">
-              <img class="serviceImg" src="static/javascript.png" alt="">
+            <div class="card" id="skill5">
+              <img class="skillImg" src="static/javascript.png" alt="">
             </div>
           </div>
 
           <div class="column" >
-              <div class="card" id="service6">
-                <img class="serviceImg" src="static/html.png" alt="">
+              <div class="card" id="skill6">
+                <img class="skillImg" src="static/html.png" alt="">
               </div>
           </div>
 
           <div class="column" >
-            <div class="card" id="service7">
-              <img class="serviceImg" src="static/css.png" alt="">
+            <div class="card" id="skill7">
+              <img class="skillImg" src="static/css.png" alt="">
             </div>
           </div>
 
@@ -112,7 +114,7 @@
       </div>
 
       <div style="display: flex; justify-content: center; align-items: center;">
-      <label for="filter" class="switch" aria-label="Toggle Filter">
+      <label for="filter" id="filter1" class="switch" aria-label="Toggle Filter">
         <input type="checkbox" id="filter" />
         <span>Programming</span>
         <span>Tools</span>
@@ -126,9 +128,60 @@
       <div id="curtain" class="curtain">
         <div class="headline">
           <p class="gradient-text" id="sectionTitle">MY SERVICES</p>
-          <p class="sectionText">Offering comprehensive software development services, including front-end and back-end development, database management, cybersecurity, and technical tutoring.
-          </p>
-          
+          <div class="row-services">
+            
+            
+            <div class="column-services" >
+              <div class="card-services" id="service1">
+                <img class="serviceImage" src="static/software.png" alt="">
+                <p class="gradient-text" id="serviceTitle">Software Development</p>
+                <p class="serviceText">Building robust desktop applications using languages like C++, Java, or Python</p>
+              </div>
+            </div>
+            
+            <div class="column-services" >
+              <div class="card" id="service2">
+                <img class="serviceImage" src="static/web-development.png" alt="">
+                <p class="gradient-text" id="serviceTitle">Web Development</p>
+                <p class="serviceText">Full-stack development using technologies like HTML, CSS, JavaScript, React, Angular, Node.js</p>
+              </div>
+            </div>
+  
+            <div class="column-services" >
+              <div class="card" id="service3">
+                <img class="serviceImage" src="static/consulting.png" alt="">
+                <p class="gradient-text" id="serviceTitle">Software Consulting</p>
+                <p class="serviceText">Providing strategic advice on technology adoption, system architecture, and digital transformation</p>
+              </div>
+            </div>
+
+            <div class="column-services" >
+              <div class="card-services" id="service4">
+                <img class="serviceImage" src="static/databases.png" alt="">
+                <p class="gradient-text" id="serviceTitle">Database Management</p>
+                <p class="serviceText">Designing and managing databases like PostgreSQL and MongoDB</p>
+              </div>
+            </div>
+  
+            <div class="column-services" >
+                <div class="card" id="service5">
+                  <img class="serviceImage" src="static/cybersecurity.png" alt="">
+                  <p class="gradient-text" id="serviceTitle">Cybersecurity</p>
+                  <p class="serviceText">Conducting security assessments and penetration testing to identify vulnerabilities. Securing applications, databases and authentication</p>
+                </div>
+            </div>
+  
+            <div class="column-services" >
+              <div class="card" id="service6">
+                <img class="serviceImage" src="static/tutoring.png" alt="">
+                <p class="gradient-text" id="serviceTitle">Tutoring</p>
+                <p class="serviceText">Basics of programming in languages like Python, Java, C++, or JavaScript. Understanding algorithms, data structures, and object-oriented programming</p>
+              </div>
+            </div>
+  
+        </div>
+        <br>
+        <button id="hire">Hire Me</button>
         </div>
       </div>
     </div>
@@ -139,21 +192,25 @@
           <p class="gradient-text" id="sectionTitle">PORTFOLIO</p>
           <p class="sectionText">Showcasing a diverse range of projects that highlight proficiency in web development, software engineering, and system architecture. Each project reflects a strong commitment to detail and functionality.
           </p>
-          
+          <div class="row-portfolio">
+
+          </div>
         </div>
       </div>
     </div>
 
     <div id="contact">
       <div id="curtain" class="curtain">
-        <div class="headline">
-          <p class="gradient-text" id="sectionTitle">CONTACT ME</p>
+        <div class="headline" style="padding-bottom: 1%; min-height: 0;">
+          
           <div class="terminal-body" id="terminalBody">
     
             <div class="container" id="container"> 
             <div class="div1" id='left'>
             <div class="screen-body-item left">
-
+              <p class="gradient-text" id="sectionTitle" style="margin-top: 0%;">CONTACT ME</p>
+              <p class="sectionText" style="padding-left: 0%;">Whether you're seeking a project partner or looking to hire me for specialized services, I'm ready to collaborate. 
+                Let's connect and explore how I can contribute to your next big idea.</p>
                 <div class="socials" id="social-contact">
                     <img id="linkedIn" src="static/Linkedin.png" style="width: 10%;">
                     <img id="github" src="static/githubW.png" style="width: 10%">
@@ -183,8 +240,11 @@
                   </div>
                 </div>
               </div>
+
+              
             </div>
             </div>
+            <img src="static/vaultboy.png" id="vaultBoy">
         </div>
           </div>
           
