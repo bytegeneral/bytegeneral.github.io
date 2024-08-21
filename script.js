@@ -22,6 +22,9 @@ const allInfos = {
 }
 
 function onStartup(){
+  const d = new Date();
+  let year = d.getFullYear();
+  document.getElementById("year").innerHTML = year;
   wallpaperRandomizer();
   showPortfolio()
 }
@@ -167,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('click', function(e){     
       if(e.target.id == 'filter'){
-        console.log
         handleSwitchToggle(e)
       }
     });
@@ -189,6 +191,13 @@ document.addEventListener('DOMContentLoaded', function () {
       document.addEventListener('mouseover', function(e){     
         if(e.target.id.includes('project')){
             showPrjDesc(e.target.id)
+        }
+      });
+
+      //hire me button (scroll to contact)
+      document.addEventListener('click', function(e){     
+        if(e.target.id == 'hire'){
+          document.getElementById("contact").scrollIntoView();
         }
       });
 

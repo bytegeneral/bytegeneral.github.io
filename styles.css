@@ -1,8 +1,13 @@
 /* general styling found here */
 /* more specific styling for each section will be found in their respective files */
 
-body{
+html{
+  background-color: #1e1e1e;
   scroll-behavior: smooth;
+
+}
+
+body{
   font-family: 'Orbitron', sans-serif;
   
   background-image: url();
@@ -56,7 +61,8 @@ body::-webkit-scrollbar-thumb{
 
 .headline {
   text-align: center;
-  padding: 150px;
+  padding: 100px;
+  padding-top: 20px;
   padding-left: 200px;
   padding-right: 200px;
   min-height: 100vh; 
@@ -91,13 +97,90 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+/* footer */
+.footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4%;
+}
 
+.ftContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__text {
+  font-size: 1.3rem;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.footer__text a {
+  font-size: 1.3rem;
+  color: #bfbfbf;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.footer__text a:hover,
+.footer__text a:active {
+  color: white;
+}
+
+.footer hr {
+  margin: 1rem auto;
+  border: 0;
+  width: 50%;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.back-to-top i {
+  color: #fff;
+  margin: 1rem 0 1.6rem;
+  transition: all 200ms ease;
+}
+
+.back-to-top i:hover {
+  transform: translateY(-2px);
+}
 
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 1200px) {
+  .headline{
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .sectionText{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+
+}
+
 @media screen and (max-width: 600px) {
   .headline{
     text-align: center;
+    padding-left: 0%;
+    padding-right: 0;
   }
 
   .sectionText{

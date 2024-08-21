@@ -95,6 +95,7 @@
   
   .app-form-button:hover {
     color: white;
+    transform: scale(1.1);
   }
 
 
@@ -109,7 +110,7 @@
   }
 
 
-  @media screen and (max-width: 980px) {
+  @media screen and (max-width: 1000px) {
 
   
     .screen-body-item.left {
