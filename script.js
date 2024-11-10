@@ -36,8 +36,9 @@ window.onload = onStartup;
 let wallpapers = [
     { url: 'static/pxfuel1.jpg' },
     { url: 'static/pxfuel2.jpg' },
-    //{ url: '' },
+    { url: 'static/PurpleOrangeWall.jpg' },
     { url: 'static/wallpaper4.jpg' },
+    { url: 'static/wallpaper3.jpg' },
 ];
 
 function getRandomElement(arr) {
