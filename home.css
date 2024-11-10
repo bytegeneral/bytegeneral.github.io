@@ -73,10 +73,4 @@
         padding-right: 2%;
     }
 
-    #home {
-        background-size: contain;  /* Ensures background image fits within mobile screen */
-        background-position: center;
-    }
-
-
 }

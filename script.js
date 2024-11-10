@@ -41,13 +41,29 @@ let wallpapers = [
     { url: 'static/wallpaper3.jpg' },
 ];
 
+let wallpapersMobile = [
+  { url: 'static/mobile1.jpg' },
+  { url: 'static/mobile2.jpg' },
+  { url: 'static/mobile3.jpg' },
+  { url: 'static/mobile4.jpg' },
+  { url: 'static/mobile5.jpg' },
+];
+
 function getRandomElement(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
     return arr[randomIndex];
 }
 
 function wallpaperRandomizer() {
-    let selectedWallpaper = getRandomElement(wallpapers);
+  let selectedWallpaper;
+  if (window.innerWidth <= 800) {
+      // Set mobile background
+      selectedWallpaper = getRandomElement(wallpapersMobile);
+  } else {
+      // Set desktop background
+      selectedWallpaper = getRandomElement(wallpapers);
+  }
+    
     //document.body.style.backgroundImage = `url(${selectedWallpaper.url})`;
     document.getElementById('home').style.backgroundImage = `url(${selectedWallpaper.url})`;
     selectedWallpaper = getRandomElement(wallpapers);
