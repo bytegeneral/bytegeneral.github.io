@@ -73,13 +73,9 @@
         padding-right: 2%;
     }
 
-    #home{
-        background-image: url();
-        background-size: cover; 
-        background-repeat: no-repeat; 
-        /* background-position: center center;  */
-        /* background-attachment: fixed;  */
-        /* min-height: 100vh;  */
+    #home {
+        background-size: 100% 100%;  /* Ensures the background image fully covers the screen without gaps */
+        background-position: center;
     }
 
 
