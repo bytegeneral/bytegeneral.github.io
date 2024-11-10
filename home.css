@@ -73,4 +73,13 @@
         padding-right: 2%;
     }
 
+    #home{
+        background-image: url();
+        background-size: cover; 
+        background-repeat: repeat-y; 
+        background-position: center; 
+        background-attachment: fixed; 
+        min-height: 100vh; 
+    }
+
 }
