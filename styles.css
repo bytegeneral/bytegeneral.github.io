@@ -52,7 +52,7 @@ body::-webkit-scrollbar-thumb{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  padding-left: 5%;
+  /* padding-left: 5%; */
   padding-right: 5%;
   padding-top: 10%;
 }
@@ -70,7 +70,7 @@ body::-webkit-scrollbar-thumb{
 
 
 
-.container{
+/* .container{
   display:inline-flex;
   flex-wrap:wrap;
   width: 100%;
@@ -78,7 +78,7 @@ body::-webkit-scrollbar-thumb{
   margin-bottom: 5%;
   padding-left: 5%;
   
-}
+} */
 
 
 #sectionTitle{
