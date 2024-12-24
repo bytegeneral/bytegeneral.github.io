@@ -1,11 +1,11 @@
 /* styling for the home section aka (landing page) */
 
-#home{
+ #home{
     background-image: url();
     background-size: cover; 
     background-repeat: no-repeat; 
-    background-position: center center; 
-    background-attachment: fixed; 
+    /* background-position: center center; 
+    background-attachment: fixed;  */
     min-height: 100vh; 
 }
 
@@ -73,13 +73,13 @@
         padding-right: 2%;
     }
 
-    #home{
+    /* #home{
         background-image: url();
         background-size: cover; 
         background-repeat: repeat-y; 
         background-position: center; 
         background-attachment: fixed; 
         min-height: 100vh; 
-    }
+    } */
 
 }
