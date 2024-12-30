@@ -84,7 +84,7 @@ function showPortfolio(){
       { id: 'project1', text: 'Software simulation of an AED device analyzing heart rhythms and providing electric shocks', title: 'AED', img: 'static/aed.jpeg', projectLink: 'https://github.com/g-kassis/AED'},
       { id: 'project2', text: 'Web Application using API to retrieve information on a given TV show' , title: 'Movies DB', img: 'static/movieDB.png', projectLink: 'https://github.com/g-kassis/imdbClone'},
       { id: 'project3', text: 'AI model classifying marine mammals from sound data' , title: 'Project Dory', img: 'static/dory.jpeg', projectLink: ''},
-      { id: 'project4', text: 'Personal Website/Portfolio' , title: 'Personal Website', img: 'static/pyramids.jpeg', projectLink: 'https://github.com/g-kassis/g-kassis.github.io'},
+      { id: 'project4', text: 'Personal Website/Portfolio' , title: 'Personal Website', img: 'static/pxfuel1.jpg', projectLink: 'https://github.com/g-kassis/g-kassis.github.io'},
       { id: 'project5', text: 'A Health and Fitness Club web application using PostgreSQL, Javascript, HTML and CSS' , title: 'Health and Fitness Club', img: 'static/fitness.jpg', projectLink: 'https://github.com/g-kassis/Health-and-Fitness-Club-Management-System'},
       { id: 'project6', text: '3D Simulation for brain shift using Python, PyVista and NumPy', title: 'Project Brainiac', img: 'static/brainiac.jpg', projectLink: 'https://github.com/g-kassis/Project-Brainiac'},
     ];
@@ -220,8 +220,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
       //on vaultboy click
       document.addEventListener('click', function(e){ 
-        if(e.target.id == 'vaultBoy'){
-          window.location = 'https://g-kassis.github.io/terminalCLI.html'
+        if(e.target.id == 'sendMail'){
+          // console.log('herre')
+          // document.getElementById("emailField").style.display = "none"
+          // document.getElementById("messageField").style.display = "none"
         }
       });
 
