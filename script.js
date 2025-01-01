@@ -227,4 +227,103 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
+
+      //when in view listners
+
+      function isInViewport(element) {
+        // Get the bounding client rectangle position in the viewport
+        var bounding = element.getBoundingClientRect();
+        
+        // Checking partial visibility
+        if (
+            bounding.top < window.innerHeight && 
+            bounding.bottom > 0 && 
+            bounding.left < window.innerWidth && 
+            bounding.right > 0
+        ) {
+            console.log('Partially in the viewport! :)');
+            return true;
+        } else {
+            console.log('Not in the viewport. :(');
+            return false;
+        }
+    }
+    let timeout;
+    window.addEventListener('scroll', function () {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        const servicesElement = document.getElementById('row-services');
+        const servicesElement2 = document.getElementById('row-services2');
+        const portfolioScroll = document.getElementById('row-portfolio')
+        const contactForm = document.getElementById('terminalBody')
+        console.log(contactForm)
+
+        //my services on scroll
+        if(window.innerWidth <= 800){
+
+          for (let i = 1; i < 7; i++) {
+            let ser = document.getElementById('columnService'+i)
+            if (isInViewport(ser)) {
+              if(i % 2 !== 0){ //even
+                ser.style.visibility = ''
+                ser.classList.add('rs2');
+              }else{ //odd
+                ser.style.visibility = ''
+                ser.classList.add('rs');
+              }
+
+            } else {
+              if(i % 2 !== 0){ //even
+                ser.style.visibility = 'hidden'
+                ser.classList.remove('rs2');
+              }else{ //odd
+                ser.style.visibility = 'hidden'
+                ser.classList.remove('rs');
+              }
+            }
+          }
+          
+        }else{
+          if (isInViewport(servicesElement) || isInViewport(servicesElement2)) {
+            servicesElement.style.visibility = ''
+            servicesElement2.style.visibility = ''
+            servicesElement.classList.add('rs');
+            servicesElement2.classList.add('rs2');
+          } else {
+            // servicesElement.classList.remove('in-view');
+            servicesElement.style.visibility = 'hidden'
+            servicesElement2.style.visibility = 'hidden'
+            servicesElement.classList.remove('rs');
+            servicesElement2.classList.remove('rs2');
+          }
+        }
+
+        //portfolio section on scroll
+ 
+
+          
+          if (isInViewport(portfolioScroll)) {
+            portfolioScroll.style.visibility = ''
+            portfolioScroll.classList.add('ps2');
+          } else {
+            // servicesElement.classList.remove('in-view');
+            portfolioScroll.style.visibility = 'hidden'
+            portfolioScroll.classList.remove('ps2');
+          }
+
+        
+          
+        //contact form
+          if(isInViewport(contactForm)){
+            contactForm.style.visibility = ''
+            contactForm.classList.add('cs');
+          }else{
+            contactForm.style.visibility = 'hidden'
+            contactForm.classList.remove('cs');
+          }
+        
+        
+      }, 100); // Adjust the delay as needed
+    });
+
 });

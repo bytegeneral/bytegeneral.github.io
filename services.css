@@ -45,10 +45,38 @@
     font-size: 24px;
   }
 
-  .serviceText{
-
+/* Add animations for sliding in */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
   }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* Add animations when the animate class is applied */
+.rs2 .column-services {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.rs .column-services {
+  animation: slideInRight 1s ease-out forwards;
+}
 
 
   @media screen and (max-width: 1200px) {
@@ -70,6 +98,38 @@
     flex: 1 1 100%; /* Full width for small screens */
     max-width: 100%;
     margin-bottom: 20px; /* Space between rows */
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  /* Add animations when the animate class is applied */
+  .rs2 .card {
+    animation: slideInLeft 1s ease-out forwards;
+  }
+  
+  .rs .card {
+    animation: slideInRight 1s ease-out forwards;
   }
 }
 

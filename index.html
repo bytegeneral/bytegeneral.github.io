@@ -41,7 +41,7 @@
   <div id="about">
     <div id="curtain" class="curtain">
       <div class="headline">
-        <p class="gradient-text" id="sectionTitle">About</p>
+        <p class="sectionTitle" id="aboutTitle">About</p>
         <p class="sectionText">Computer Science professional working on turning complex problems into elegant solutions. 
           From software engineering to machine learning, if it involves coding, I’m all in.
         </p>
@@ -71,7 +71,7 @@
           </div>
         </div>
         
-        <p class="gradient-text" id="sectionTitle">WHAT I KNOW?</p>
+        <p class="sectionTitle" id="techStackTitle">WHAT I KNOW?</p>
         <p class="sectionText">Over a long professional and academic journey, I have acquired a diverse set of tools and skills, 
           ranging from programming languages to specialized technologies. This arsenal allows me to tackle complex challenges, 
           create innovative solutions, and continuously push the boundaries of what's possible in the world of software development.
@@ -204,19 +204,19 @@
     <div id="services">
       <div id="curtain" class="curtain">
         <div class="headline" style="padding-top: 100px;">
-          <p class="gradient-text" id="sectionTitle">MY SERVICES</p>
-          <div class="row-services">
+          <p class="sectionTitle" id="servicesTitle">MY SERVICES</p>
+          <div class="row-services" id="row-services">
             
             
-            <div class="column-services" >
-              <div class="card-services" id="service1">
+            <div class="column-services" id="columnService1">
+              <div class="card" id="service1">
                 <img class="serviceImage" src="static/software.png" alt="">
                 <p class="gradient-text" id="serviceTitle">Software Development</p>
                 <p class="serviceText">Building robust desktop applications using languages like C++, Java, or Python</p>
               </div>
             </div>
             
-            <div class="column-services" >
+            <div class="column-services" id="columnService2">
               <div class="card" id="service2">
                 <img class="serviceImage" src="static/web-development.png" alt="">
                 <p class="gradient-text" id="serviceTitle">Web Development</p>
@@ -224,7 +224,7 @@
               </div>
             </div>
   
-            <div class="column-services" >
+            <div class="column-services" id="columnService3" >
               <div class="card" id="service3">
                 <img class="serviceImage" src="static/consulting.png" alt="">
                 <p class="gradient-text" id="serviceTitle">Software Consulting</p>
@@ -232,15 +232,19 @@
               </div>
             </div>
 
-            <div class="column-services" >
-              <div class="card-services" id="service4">
+          </div>
+
+          <div class="row-services" id="row-services2">
+
+            <div class="column-services" id="columnService4">
+              <div class="card" id="service4">
                 <img class="serviceImage" src="static/databases.png" alt="">
                 <p class="gradient-text" id="serviceTitle">Database Management</p>
                 <p class="serviceText">Designing and managing databases like PostgreSQL and MongoDB</p>
               </div>
             </div>
   
-            <div class="column-services" >
+            <div class="column-services" id="columnService5">
                 <div class="card" id="service5">
                   <img class="serviceImage" src="static/cybersecurity.png" alt="">
                   <p class="gradient-text" id="serviceTitle">Cybersecurity</p>
@@ -248,28 +252,31 @@
                 </div>
             </div>
   
-            <div class="column-services" >
+            <div class="column-services" id="columnService6">
               <div class="card" id="service6">
                 <img class="serviceImage" src="static/tutoring.png" alt="">
                 <p class="gradient-text" id="serviceTitle">Tutoring</p>
                 <p class="serviceText">Basics of programming in languages like Python, Java, C++, or JavaScript. Understanding algorithms, data structures, and object-oriented programming</p>
               </div>
             </div>
-  
-        </div>
+
+          </div>
+          
+        
         <br>
         <button id="hire">Hire Me</button>
         </div>
+      </div>
       </div>
     </div>
 
     <div id="portfolio">
       <div id="curtain" class="curtain">
         <div class="headline" style="padding-bottom: 20px;">
-          <p class="gradient-text" id="sectionTitle">PORTFOLIO</p>
+          <p class="sectionTitle" id="portfolioTitle">PORTFOLIO</p>
           <p class="sectionText">Showcasing a diverse range of projects that highlight proficiency in web development, software engineering, and system architecture. Each project reflects a strong commitment to detail and functionality.
           </p>
-          <div class="row-portfolio">
+          <div class="row-portfolio" id="row-portfolio">
 
           </div>
         </div>
@@ -284,8 +291,8 @@
     
             <div class="container" id="container"> 
             <div class="div1" id='left'>
-            <div class="screen-body-item left">
-              <p class="gradient-text" id="sectionTitle" style="margin-top: 0%;">CONTACT ME</p>
+            <div class="screen-body-item left" id="screen-body-item left">
+              <p class="sectionTitle" id="contactTitle" style="margin-top: 0%;">CONTACT ME</p>
               <p class="sectionText" style="padding-left: 0%;">Whether you're seeking a project partner or looking to hire me for specialized services, I'm ready to collaborate. 
                 Let's connect and explore how I can contribute to your next big idea.</p>
                 <div class="socials" id="social-contact">
@@ -302,13 +309,13 @@
                 <form action="https://formspree.io/f/xpwwjpnb" method="post">
                 <div class="app-form">
                   <div class="app-form-group">
-                    <input name="name" type="name" class="app-form-control" placeholder="NAME">
+                    <input name="name" type="name" class="app-form-control" placeholder="NAME (optional)">
                   </div>
                   <div class="app-form-group">
                     <input id="emailField" name="email" type="email" class="app-form-control" placeholder="YOUR EMAIL">
                   </div>
                   <div class="app-form-group">
-                    <input name="number" type="number" class="app-form-control" placeholder="PHONE #">
+                    <input name="number" type="number" class="app-form-control" placeholder="PHONE # (optional)">
                   </div>
                   <div class="app-form-group message">
                     <input id="messageField" name="message" type="message" class="app-form-control" placeholder="MESSAGE">

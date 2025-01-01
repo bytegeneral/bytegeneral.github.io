@@ -58,6 +58,38 @@
       height: 170px;
   
   }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  /* Add animations when the animate class is applied */
+  .ps2 .column-portfolio {
+    animation: slideInLeft 1s ease-out forwards;
+  }
+  
+  .ps .column-portfolio {
+    animation: slideInRight 1s ease-out forwards;
+  }
   
 
   
@@ -81,6 +113,38 @@
       max-width: 100%;
       margin-bottom: 20px; /* Space between rows */
       
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    
+    /* Add animations when the animate class is applied */
+    .ps2 .column-portfolio {
+      animation: slideInLeft 1s ease-out forwards;
+    }
+    
+    .ps .column-portfolio {
+      animation: slideInRight 1s ease-out forwards;
     }
   
   }
