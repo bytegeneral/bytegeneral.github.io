@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         
         
-      }, 100); // Adjust the delay as needed
+      }, 50); // Adjust the delay as needed
     });
 
 });

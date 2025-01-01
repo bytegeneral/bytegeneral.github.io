@@ -125,11 +125,11 @@
   
   /* Add animations when the animate class is applied */
   .rs2 .card {
-    animation: slideInLeft 1s ease-out forwards;
+    animation: slideInLeft 0.5s ease-out forwards;
   }
   
   .rs .card {
-    animation: slideInRight 1s ease-out forwards;
+    animation: slideInRight 0.5s ease-out forwards;
   }
 }
 
