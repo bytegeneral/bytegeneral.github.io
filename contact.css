@@ -112,7 +112,7 @@
   
   /* Add animations when the animate class is applied */
   .cs .screen-body-item.left {
-    animation: slideInRight 0.5s ease-out forwards;
+    animation: slideInRight 1s ease-out forwards;
   }
 
   @media screen and (max-width: 1000px) {
@@ -135,10 +135,38 @@
     }
       
   }
+
+  @media screen and (max-width: 800px) {
+  
+    .screen-body-item {
+      padding: 0;
+    }
+
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  /* Add animations when the animate class is applied */
+  .cs .screen-body-item.left {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  }
   
   @media screen and (max-width: 600px) {
   
     .screen-body-item {
       padding: 0;
     }
+
+    
   }
