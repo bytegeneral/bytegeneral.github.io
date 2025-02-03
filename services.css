@@ -84,6 +84,7 @@
       flex: 1 1 50%; /* Full width for smaller screens */
       max-width: 47%;
     }
+    
   }
 
   @media screen and (max-width: 1000px) {

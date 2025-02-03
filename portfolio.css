@@ -4,148 +4,80 @@
     background-repeat: no-repeat; 
     background-position: center center; 
     background-attachment: fixed; 
-    min-height: 100vh; 
+    /* min-height: 100vh;  */
   }
 
 
-  .row-portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the columns */
-    gap: 20px; /* Space between columns */
-    margin-right: 0; /* Remove right margin */
-    margin-left: 0; /* Remove left margin */
-    padding: 0; /* Remove padding */
-  }
-  
-  
-  
-  .column-portfolio {
-    flex: 1 1 30%; /* Flexible width, can shrink and grow */
-    max-width: 31%;
-    box-sizing: border-box; /* Ensure padding is included in width */
-      padding: 1px;
-      overflow-y: scroll;
-  }
-  
-    /* Style the counter cards */
-    .card-portfolio {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      padding: 16px;
-      text-align: center;
-      background-color: transparent;
-      border-radius: 7px;
-    }
-
-    /*scroll bar*/
-    .column-portfolio::-webkit-scrollbar{
-      width: 10px;
-      display: none;
-    }
-    .column-portfolio::-webkit-scrollbar-track{
-      background: #212121; 
-    }
-    .column-portfolio::-webkit-scrollbar-thumb{
-      background-color: #a0a0a0;   
-      border-radius: 20px;       
-      border: 3px solid #212121;
-    }
-  
-  
-  .overlay-portfolio{
-      padding: 12px;
-      width: auto;
-      height: 170px;
-  
-  }
-
-  @keyframes slideInLeft {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInRight {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  
-  /* Add animations when the animate class is applied */
-  .ps2 .column-portfolio {
-    animation: slideInLeft 1s ease-out forwards;
-  }
-  
-  .ps .column-portfolio {
-    animation: slideInRight 1s ease-out forwards;
-  }
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-radius: 25px;
+  margin: 6px;
+  background-color: #212121; 
+  color: rgba(255, 255, 255, 0.692); 
   
 
-  
-  @media screen and (max-width: 1200px) {
-    .column-portfolio {
-      flex: 1 1 50%; /* Full width for smaller screens */
-      max-width: 47%;
-    }
-  }
+}
 
-  @media screen and (max-width: 1000px) {
-    .column-portfolio {
-      flex: 1 1 40%; /* Full width for smaller screens */
-      max-width: 40%;
-    }
-  }
-  
-  @media screen and (max-width: 800px) {
-    .column-portfolio {
-      flex: 1 1 100%; /* Full width for small screens */
-      max-width: 100%;
-      margin-bottom: 20px; /* Space between rows */
-      
-    }
 
-    @keyframes slideInLeft {
-      from {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        transform: translateY(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    
-    
-    /* Add animations when the animate class is applied */
-    .ps2 .column-portfolio {
-      animation: slideInLeft 0.5s ease-out forwards;
-    }
-    
-    .ps .column-portfolio {
-      animation: slideInRight 0.5s ease-out forwards;
-    }
+/* Active class added via JavaScript */
+.collapsible.show {
+  animation: dropIn 0.5s ease forwards;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  cursor: pointer;
+  color: white;
+  transform: scale(1.01);
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  background-color: #212121; 
+  color: rgba(255, 255, 255, 0.692); 
+  border-radius: 25px;
+  padding-bottom: 10%;
   
+}
+
+.projectImg{
+  border-radius: 14px;
+}
+
+.gitLink:hover{
+  transform: scale(1.1);
+}
+
+.screen-body-item-portfolio{
+  flex: 1;
+  padding: 5px;
+  align-content: center;
+}
+
+.screen-body-item-portfolio.left {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 800px) {
+  .container {
+      flex-direction: column; 
   }
-    
+  
+  .div1, .div2 {
+      width: 100%; 
+  }
+}
+ 

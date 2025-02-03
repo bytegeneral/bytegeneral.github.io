@@ -81,8 +81,8 @@ body::-webkit-scrollbar-thumb{
   font-family: 'Orbitron', sans-serif;
   font-size: 18px;
   color: white;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 

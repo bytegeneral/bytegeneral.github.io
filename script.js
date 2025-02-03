@@ -1,26 +1,3 @@
-
-const allProjects = {
-
-
-    "Project1": { "Title":"Personal Website" ,"ImageURL":"static/pyramids.jpeg", "Text":"Web Design/Development" , "Tech":"JS|HTML|CSS"},
-    "Project2": { "Title":"AED Plus" ,"ImageURL":"static/aed.jpeg", "Text":"Software Development" , "Tech":"C++|Qt"},
-    "Project3": { "Title":"Project Dory" ,"ImageURL":"static/dory.jpeg", "Text":"Artificial Intelligence" , "Tech":"Python"},
-
-    "Project4": { "Title":"Movie Database" ,"ImageURL":"static/movieDB.png", "Text":"Web Design/Development" , "Tech":"JS|HTML|CSS\n|Node|Express|MongoDB|APIs"},
-    "Project5": { "Title":"P5" ,"ImageURL":"", "Text":"COMING SOON" , "Tech":""},
-    "Project6": { "Title":"P6" ,"ImageURL":"", "Text":"COMING SOON" , "Tech":""},
-                
-}
-
-const allInfos = {
-
-
-    "Info1": { "Title":"Web Development", "Text":"I am skilled in JS, HTML, and CSS. My journey in the web realm extends to Node.js, Express.js, MongoDB, and APIs. I thrive on creating seamless and dynamic online experiences."},
-    "Info2": { "Title":"Software Development" , "Text":"I have a strong foundation in software development principles such as object-oriented programming, data structures & algorithms. Specializing in multiple programming languages like C/C++, Python, and Java" },
-    "Info3": { "Title":"Extras" ,"Text":"Data Structures & Algorithms\nArtificial Intelligence\nOperating Systems\n"},
-                
-}
-
 function onStartup(){
   const d = new Date();
   let year = d.getFullYear();
@@ -64,16 +41,10 @@ function wallpaperRandomizer() {
       selectedWallpaper = getRandomElement(wallpapers);
   }
     
-    //document.body.style.backgroundImage = `url(${selectedWallpaper.url})`;
-    document.getElementById('home').style.backgroundImage = `url(${selectedWallpaper.url})`;
-    selectedWallpaper = getRandomElement(wallpapers);
-    document.getElementById('about').style.backgroundColor = `#1e1e1e`;
-    selectedWallpaper = getRandomElement(wallpapers);
-    document.getElementById('services').style.backgroundColor = `#1e1e1e`;
-    selectedWallpaper = getRandomElement(wallpapers);
-    document.getElementById('portfolio').style.backgroundColor = `#1e1e1e`;
-    selectedWallpaper = getRandomElement(wallpapers);
-    document.getElementById('contact').style.backgroundColor = `#1e1e1e`;
+  //MORE WALLPAPERS
+  //https://hellofuture.orange.com/app/uploads/2018/01/Intro-HELLO-FUTURE-1920x1080_v2.gif - neural network nodes gif
+  //https://i.pinimg.com/originals/c6/33/c2/c633c20ede82f0e0ced7d570dbe3a1f3.gif - mario gif 
+    document.getElementById('home').style.backgroundImage = `url(https://hellofuture.orange.com/app/uploads/2018/01/Intro-HELLO-FUTURE-1920x1080_v2.gif)`;
 }
 
 
@@ -90,22 +61,40 @@ function showPortfolio(){
     ];
   
     projects.forEach(prj => {
-      let col = document.createElement('div');
-      col.className = 'column-portfolio';
-      col.id = prj.id
-      col.style.borderRadius = '7px';
-      col.style.border = '1px solid rgba(255, 255, 255, 0.692)';
-      col.style.backgroundImage = `url(${prj.img})`;
-      col.style.backgroundRepeat = 'no-repeat';
-      col.style.backgroundPosition = 'center';
-      col.style.backgroundSize = 'cover';
-      col.style.height = '190px'
+      let button = document.createElement('button');
+      button.className = 'collapsible';
+      button.id = prj.id
+      button.type = 'button'
+      button.innerHTML = prj.title
+      button.backgroundImage = `url(${prj.img})`
+
+      let arrow = document.createElement('div');
+      arrow.id = prj.id + 'arrow'
+      arrow.innerHTML = '&#x25BC;'
+      arrow.style.float = 'right'
+      
+      button.appendChild(arrow)
   
-      let overlay = document.createElement('div');
-      overlay.className = 'overlay-portfolio';
-      overlay.innerHTML = `<h3>${prj.title}</h3><p>${prj.text}</p>`;
-      overlay.style.display = 'none'
+      let content = document.createElement('div');
+      content.className = 'content';
+      
+      let paragraph = document.createElement('p')
+      paragraph.textContent = prj.text
+      
   
+      const container = document.createElement("div");
+      container.className = "container";
+      container.id = "container";
+  
+      // Left section
+      const leftDiv = document.createElement("div");
+      leftDiv.className = "div1";
+      leftDiv.id = "left";
+  
+      const screenBodyItemLeft = document.createElement("div");
+      screenBodyItemLeft.className = "screen-body-item-portfolio left";
+      screenBodyItemLeft.id = "screen-body-item left";
+
       let githubImg = document.createElement('img');
       let link = document.createElement('a')
       link.href = prj.projectLink
@@ -113,40 +102,64 @@ function showPortfolio(){
       githubImg.id = prj.id + 'Github'
       githubImg.className = 'gitLink'
       githubImg.style.width = '30px'
-      // githubImg.style.float = 'right'
+      githubImg.style.float = 'left'
       githubImg.style.margin ='auto'
   
       link.append(githubImg)
-      overlay.append(link)
+
+      screenBodyItemLeft.append(paragraph);
+      screenBodyItemLeft.append(link);
+      leftDiv.append(screenBodyItemLeft);
+      container.append(leftDiv);
   
+      // Right section
+      const rightDiv = document.createElement("div");
+      rightDiv.className = "div2";
+      rightDiv.id = "right";
+  
+      const screenBodyItemRight = document.createElement("div");
+      screenBodyItemRight.className = "screen-body-item-portfolio";
+
+      const img = document.createElement("img");
+      img.id = prj.id + 'img'
+      img.src = prj.img
+      img.style.width = "100%"
+      img.className = "projectImg"
+  
+      screenBodyItemRight.appendChild(img)
+      rightDiv.appendChild(screenBodyItemRight);
+      container.appendChild(rightDiv);
+  
+      // Append everything to the body
+      content.appendChild(container) 
       
   
-      col.appendChild(overlay);
-  
-      document.getElementsByClassName('row-portfolio')[0].appendChild(col)
+      document.getElementsByClassName('row-portfolio')[0].appendChild(button)
+      document.getElementsByClassName('row-portfolio')[0].appendChild(content)
+
     });
   
 }
 
-function showPrjDesc(prj){
+// function showPrjDesc(prj){
   
-  let prjElement = document.getElementById(prj);
-  console.log(prjElement)
-  prjElement.children[0].style.display = 'block'
-  prjElement.children[0].style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
+//   let prjElement = document.getElementById(prj);
+//   console.log(prjElement)
+//   prjElement.children[0].style.display = 'block'
+//   prjElement.children[0].style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
 
-  prjElement.addEventListener('mouseleave', function(e){     
+//   prjElement.addEventListener('mouseleave', function(e){     
 
-    prjNormal(e.target.id)
-  });
+//     prjNormal(e.target.id)
+//   });
 
-}
+// }
 
-function prjNormal(prj){
-  let prjElement = document.getElementById(prj);
-  prjElement.children[0].style.display = 'none'
-  prjElement.children[0].backgroundColor = 'transparent'
-}
+// function prjNormal(prj){
+//   let prjElement = document.getElementById(prj);
+//   prjElement.children[0].style.display = 'none'
+//   prjElement.children[0].backgroundColor = 'transparent'
+// }
 
 let progArr = ['c.png','c++.png','python.png','java.png','javascript.png','html.png','css.png'];
 
@@ -205,9 +218,27 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       //portfolio hover on project
-      document.addEventListener('mouseover', function(e){     
+      // document.addEventListener('mouseover', function(e){     
+      //   if(e.target.id.includes('project')){
+      //       showPrjDesc(e.target.id)
+      //   }
+      // });
+
+      
+
+       //project on click
+       document.addEventListener('click', function(e){ 
         if(e.target.id.includes('project')){
-            showPrjDesc(e.target.id)
+          let projectSelected = document.getElementById(e.target.id).nextElementSibling
+          if (projectSelected.style.display === "block") {
+            projectSelected.style.display = "none";
+            let b = document.getElementById(e.target.id)
+            document.getElementById(b.id+'arrow').innerHTML = '&#x25BC;'
+          } else {
+            projectSelected.style.display = "block";
+            let b = document.getElementById(e.target.id)
+            document.getElementById(b.id+'arrow').innerHTML = '&#x25B2;'
+          }
         }
       });
 
@@ -218,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      //on vaultboy click
+      //on mail send button
       document.addEventListener('click', function(e){ 
         if(e.target.id == 'sendMail'){
           // console.log('herre')
@@ -226,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
           // document.getElementById("messageField").style.display = "none"
         }
       });
-
 
       //when in view listners
 
@@ -297,21 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
             servicesElement2.classList.remove('rs2');
           }
         }
-
-        //portfolio section on scroll
- 
-
-          
-          if (isInViewport(portfolioScroll)) {
-            portfolioScroll.style.visibility = ''
-            portfolioScroll.classList.add('ps2');
-          } else {
-            // servicesElement.classList.remove('in-view');
-            portfolioScroll.style.visibility = 'hidden'
-            portfolioScroll.classList.remove('ps2');
-          }
-
-        
           
         //contact form
           if(isInViewport(contactForm)){
