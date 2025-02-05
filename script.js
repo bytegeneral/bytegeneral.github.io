@@ -336,6 +336,21 @@ document.addEventListener('DOMContentLoaded', function () {
             contactForm.style.visibility = 'hidden'
             contactForm.classList.remove('cs');
           }
+
+
+          //porfolio projects
+          if(isInViewport(portfolioScroll)){
+            const items = document.querySelectorAll("#row-portfolio button");
+            console.log(items)
+            items.forEach((item) => {
+              item.classList.add("animate"); // Add animation class to all items
+            });
+          }else{
+            const items = document.querySelectorAll("#row-portfolio button");
+            items.forEach((item) => {
+              item.classList.remove("animate"); // Add animation class to all items
+            });
+          }
         
         
       }, 50); // Adjust the delay as needed

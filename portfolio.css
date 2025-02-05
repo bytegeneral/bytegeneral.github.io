@@ -70,6 +70,48 @@
 }
 
 
+/* animation for prices*/
+#row-portfolio button {
+  opacity: 0; /* Start hidden */
+  transform: translateY(-20px); 
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  transition: opacity 1s ease, transform 1s ease; 
+}
+
+#row-portfolio button.animate {
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+/* Keep in increments of 2 (there is a collapsible in between every button) */
+#row-portfolio button:nth-child(1).animate {
+  transition-delay: 0s; 
+}
+
+#row-portfolio button:nth-child(3).animate {
+  transition-delay: 0.5s; 
+}
+
+#row-portfolio button:nth-child(5).animate {
+  transition-delay: 1s; 
+}
+
+#row-portfolio button:nth-child(7).animate {
+  transition-delay: 1.5s;
+}
+
+#row-portfolio button:nth-child(9).animate {
+  transition-delay: 2s; 
+}
+
+#row-portfolio button:nth-child(11).animate {
+  transition-delay: 2.5s; 
+}
+
+
+
 /* Responsive Design for Smaller Screens */
 @media (max-width: 800px) {
   .container {
