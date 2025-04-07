@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/g-kassis.github.io/', // <- replace with your actual repo name
-  outDir: 'build', // Ensure this matches the folder name
-
+  base: '/g-kassis.github.io/', // Your repo name
+  build: {
+    outDir: 'dist', // Make sure Vite outputs to the `dist` directory
+  }
 })
