@@ -1,0 +1,163 @@
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 10%;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px
+}
+
+.service-card {
+    /* background: #111; */
+    border: 2px solid transparent;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.service-card:hover {
+    /* box-shadow: 0px 10px 20px rgba(168, 85, 247, 0.3); */
+    /* border-color: white; */
+    cursor: pointer;
+    .service-image{
+        transform: scale(1.05);
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .service-number{
+        color: white;
+        
+    }
+
+    .gradient-text{
+        color: white;
+    }
+
+    .service-description{
+        
+    }
+}
+
+.service-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.service-image {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    margin: 15px 0;
+}
+
+.service-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.gradient-text {
+    color: #ccc;
+}
+
+.service-description {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin: 10px 0;
+}
+
+.hireme {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    transition: .6s;
+    cursor: pointer;
+}
+
+.hireme .chevron-right {
+    font-size: 25px;
+}
+
+.hireme:hover {
+    gap: 30px;
+    transition: .6s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .services-container {
+        margin: 50px;  
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .hireme {
+        padding: 15px 30px;
+        font-size: 16px;
+        margin-top: 50px;
+    }
+
+    .service-card {
+        width: auto;
+    }
+
+    .hireme:hover {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .services-container {
+        margin: 10px;  
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hireme {
+        padding: 15px 30px;
+        font-size: 16px;
+        margin-top: 50px;
+    }
+
+    .service-card {
+        width: auto;
+        margin-top: 20px;
+    }
+
+    .hireme:hover {
+        gap: 20px;
+    }
+}

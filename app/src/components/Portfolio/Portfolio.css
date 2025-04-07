@@ -1,0 +1,119 @@
+.mywork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 10%;
+}
+
+.mywork-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+/* HOVER EFFECT: Move hovered project up and others down */
+.project-card.active {
+    transform: translateY(-2px);
+    z-index: 0;
+}
+
+/* Stack effect: push others slightly down */
+.project-card:not(.active) {
+    transform: translateY(1px);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Description Overlay */
+/* Description Overlay */
+.overlay {
+    position: absolute;
+    bottom: -100%; /* Initially hidden */
+    left: 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    transition: bottom 0.3s ease-in-out, max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow-y: auto;  /* Enables scrolling if content is too large */
+}
+
+/* Show description smoothly */
+.project-card.active .overlay {
+    bottom: 0;
+    max-height: 100%; /* Adjust this value based on the text length */
+    overflow: visible;
+}
+
+/* Make text readable and not cut off */
+.overlay h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.overlay p {
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+
+/* Show More Button */
+.mywork-showmore {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: .6s;
+    cursor: pointer;
+}
+
+.mywork-showmore img {
+    width: 25px;
+}
+
+.mywork-showmore:hover {
+    gap: 30px;
+    transition: .6s;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .mywork-container {
+        grid-template-columns: 1fr;
+    }
+}
