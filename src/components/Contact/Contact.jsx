@@ -43,8 +43,8 @@ const Contact = () => {
               explore how I can contribute to your next big idea.
             </div>
             <div className="contact-socials">
-              <img src={linkedin} alt="LinkedIn" className="social-icon" width="40px" onClick={() => window.location.href = 'https://www.github.com/g-kassis'} />
-              <img src={github} alt="GitHub" className="social-icon" width="40px" onClick={() => window.location.href = 'https://www.linkedin.com/in/giovanni-kassis'} />
+              <img src={linkedin} alt="LinkedIn" className="social-icon" width="40px" onClick={() => window.location.href = 'https://www.linkedin.com/in/giovanni-kassis'} />
+              <img src={github} alt="GitHub" className="social-icon" width="40px" onClick={() => window.location.href = 'https://www.github.com/g-kassis'} />
             </div>
           </div>
           <br />
@@ -58,10 +58,10 @@ const Contact = () => {
               <input name="email" type="email" className="contact-input" placeholder="Your Email" required />
               <input name="number" type="tel" className="contact-input" placeholder="Phone # (optional)" />
               <textarea name="message" className="contact-input message" placeholder="Message" required></textarea>
-              <div type="submit" className="contact-button">
+              <button type="submit" className="contact-button">
                 <p>Send</p>
                 <p className="chevron-right"> &#8250;</p>
-              </div>
+              </button>
             </form>
           </div>
         </div>
