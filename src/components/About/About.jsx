@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import aboutProfile from "../../assets/memoji.png"; // Adjust path if needed
-import "./About.css"; // Ensure CSS is imported
+import aboutProfile from "/assets/memoji.png"; // Adjust path
+import { motion } from "framer-motion";
+import "./About.css";
 
 const skills = [
   { name: "HTML & CSS", width: "65%" },
@@ -15,92 +16,87 @@ const achievements = [
   { value: "15+", label: "HAPPY CLIENTS" },
 ];
 
-const About = () => {
+export default function About() {
   const [animate, setAnimate] = useState(false);
   const skillsRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setAnimate(true);
-        }
+      ([entry]) => {
+        if (entry.isIntersecting) setAnimate(true);
       },
-      { threshold: 0.8 } // Trigger when 80% of the section is visible
+      { threshold: 0.5 }
     );
 
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
-    }
+    if (skillsRef.current) observer.observe(skillsRef.current);
 
     return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
-      }
+      if (skillsRef.current) observer.unobserve(skillsRef.current);
     };
   }, []);
 
   return (
-    <div id="about" className="about">
-      {/* Title Section */}
-      <div className="title-box">
-        <h1>About me</h1>
-      </div>
+    <section id="about" className="about-container">
+      <motion.h2
+        className="about-title"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        About Me
+      </motion.h2>
 
-      {/* Content Section */}
-      <div className="about-sections">
-        {/* Left Side - Profile Image */}
-        <div className="about-left">
+      <div className="about-content">
+        {/* Profile Image */}
+        <motion.div
+          className="about-left"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <img src={aboutProfile} alt="Profile" />
-        </div>
+        </motion.div>
 
-        {/* Right Side - Description & Skills */}
-        <div className="about-right">
+        {/* Description + Skills */}
+        <motion.div
+          className="about-right"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="about-para">
             <p>
-            I am a Computer Science professional working on turning complex problems into elegant solutions. 
-            From software engineering to machine learning, if it involves coding, I’m all in.
-              Throughout my career, I have had the privilege of collaborating with prestigious organizations,
-              contributing to their success and growth.
+              I am a Computer Science professional turning complex problems
+              into elegant solutions. From software engineering to machine
+              learning, if it involves coding, I’m all in.
             </p>
             <p>
-              I am a Full Stack Developer with expertise in both front end and back end technologies. 
-              I have acquired a diverse set of tools and skills, ranging from programming languages to frameworks and libraries. 
-              This arsenal allows me to tackle complex challenges, create innovative solutions, 
-              and continuously push the boundaries of what's possible in the world of development.
+              As a Full Stack Developer, I specialize in both front-end and
+              back-end technologies. My toolkit allows me to create innovative
+              solutions and continuously push the boundaries of what’s
+              possible.
             </p>
           </div>
 
-          {/* Skills with Animation */}
+          {/* Skills */}
           <div className="about-skills" ref={skillsRef}>
-            {skills.map((skill, index) => (
-              <div key={index} className="about-skill">
+            {skills.map((skill, i) => (
+              <div key={i} className="about-skill">
                 <p>{skill.name}</p>
-                <hr
-                  className={`skill-bar ${animate ? "fill" : ""}`}
-                  style={{ "--bar-width": skill.width }}
-                />
+                <div className="skill-bar">
+                  <motion.div
+                    className="skill-fill"
+                    initial={{ width: 0 }}
+                    animate={{ width: animate ? skill.width : 0 }}
+                    transition={{ duration: 1.5, delay: i * 0.2 }}
+                  />
+                </div>
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-
-      {/* Achievements */}
-      <div className="about-achievements">
-        {achievements.map((achieve, index) => (
-          <React.Fragment key={index}>
-            <div className="about-achievement">
-              <h1>{achieve.value}</h1>
-              <p>{achieve.label}</p>
-            </div>
-            {index < achievements.length - 1 && <hr />}
-          </React.Fragment>
-        ))}
-      </div>
-    </div>
+      
+    </section>
   );
-};
-
-
-export default About;
+}

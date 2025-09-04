@@ -1,179 +1,146 @@
-
-.about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    margin: 70px 10%;
-    height: 100vh;
-    margin-bottom: 0px;
+/* Container */
+.about-container {
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  background-color: #0f111b;
+  color: #f9fafb;
+  font-family: 'Inter', sans-serif;
 }
 
-.about-sections {
-    display: flex;
-    gap: 60px
+/* Title */
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #f3f4f6;
 }
 
+/* Content Section */
+.about-content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Profile Image */
 .about-left img {
-    width: 300px;
-    border-radius: 10px
+  width: 280px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+.about-left img:hover {
+  transform: translateY(-5px);
 }
 
+/* Right Side */
 .about-right {
-    display: flex;
-    flex-direction: column;
-    gap: 50px
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.about-para {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 18px;
-    font-weight: 500
+.about-para p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #d1d5db;
 }
 
+/* Skills */
 .about-skills {
-    display: flex;
-    flex-direction: column;
-    gap: 15px
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .about-skill {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    transition: .3s
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .about-skill p {
-    min-width: 130px;
-    font-size: 20px;
-    font-weight: 500
+  min-width: 130px;
+  font-weight: 500;
+  font-size: 18px;
 }
 
+/* Skill Bars */
 .skill-bar {
-    display: block; /* Ensures it behaves properly */
-    width: 0%; /* Start from 0% */
-    height: 8px;
-    border-radius: 50px;
-background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
-    transition: width 1.5s ease-in-out; /* Smooth animation */
+  flex: 1;
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
 }
 
-.skill-bar.fill {
-    width: var(--bar-width); /* Fills to assigned width */
-}
-
-
-.about-skill hr {
-    outline: none;
-    border: none;
-    width: 0%;
-    height: 8px;
-    border-radius: 50px;
-background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
-}
-
+/* Achievements */
 .about-achievements {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 50px
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .about-achievement {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    transition: .5s
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-achievement h1 {
-    font-size: 40px;
-    font-weight: 700;
-background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent
+.about-achievement h3 {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(to right, #4f46e5, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-achievement p {
-    font-size: 18px;
-    font-weight: 500
+  font-size: 16px;
+  color: #d1d5db;
+  margin-top: 8px;
 }
 
-.about-skill:hover {
-    transform: scale(1.05);
-    transition: .3s
-}
-
-.about-achievement:hover {
-    transform: scale(1.12);
-    transition: .5s
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-    .about {
-        gap:50px;
-        margin: 50px 6%;
-        align-items: start
-    }
+  .about-content {
+    flex-direction: column;
+    gap: 40px;
+  }
 
-    .about-sections {
-        flex-direction: column
-    }
+  .about-left img {
+    width: 200px;
+    align-self: center;
+  }
 
-    .about-left {
-        display: none
-    }
+  .about-skill p {
+    min-width: 100px;
+    font-size: 16px;
+  }
 
-    .about-para {
-        line-height: 25px
-    }
+  .skill-bar {
+    height: 8px;
+  }
 
-    .about-skill p {
-        font-size: 16px;
-        min-width: 90px
-    }
+  .about-achievement h3 {
+    font-size: 28px;
+  }
 
-    .about-skill hr {
-        height: 6px
-    }
-
-    .about-achievements {
-        justify-content: space-between
-    }
-
-    .about-achievement {
-        gap: 10px
-    }
-
-    .about-achievement h1 {
-        font-size: 28px
-    }
-
-    .about-achievement p {
-        text-align: center;
-        font-size: 12px
-    }
-
-   
-    
+  .about-achievement p {
+    font-size: 14px;
+  }
 }

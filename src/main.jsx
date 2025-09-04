@@ -9,14 +9,16 @@ import Portfolio from './components/Portfolio/Portfolio'
 import Contact from './components/Contact/Contact'
 import TechStackSlider from './components/Techstack/Techstack'
 import Footer from './components/Footer/Footer'
+import Timeline from './components/Timeline/Timeline'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Hero />
     <About />
+    <Timeline />
     <TechStackSlider />
-    <Services />
+    {/* <Services /> */}
     <Portfolio />
     <Contact />
     <Footer />

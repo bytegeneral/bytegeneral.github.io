@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
-import github from "../../assets/githubW.png";
-import linkedin from "../../assets/Linkedin.png";
+import github from "/assets/githubW.png";
+import linkedin from "/assets/Linkedin.png";
 
 const Hero = () => {
     const titles = ["WEB DEVELOPMENT", "SOFTWARE DEVELOPMENT", "ARTIFICIAL INTELLIGENCE"];

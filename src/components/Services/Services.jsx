@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import "./Services.css";
-import software from "../../assets/software.png";
-import webDevelopment from "../../assets/web-development.png";
-import consulting from "../../assets/consulting.png";
-import databases from "../../assets/databases.png";
-import cybersecurity from "../../assets/cybersecurity.png";
-import tutoring from "../../assets/tutoring.png";
+import software from "/assets/services/software.png";
+import webDevelopment from "/assets/services/web-development.png";
+import consulting from "/assets/services/consulting.png";
+import databases from "/assets/services/databases.png";
+import cybersecurity from "/assets/services/cybersecurity.png";
+import tutoring from "/assets/services/tutoring.png";
 
 const services = [
     {

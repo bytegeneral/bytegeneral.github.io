@@ -1,20 +1,20 @@
 import React from "react";
 import "./Techstack.css";
-import github from "../../assets/githubW.png";
-import git from "../../assets/git.png";
-import node from "../../assets/node.png";
-import javascript from "../../assets/javascript.png";
-import html from "../../assets/html.png";
-import css from "../../assets/css.png";
-import c from "../../assets/c.png";
-import cpp from "../../assets/c++.png";
-import python from "../../assets/python.png";
-import java from "../../assets/java.png";
-import postgres from "../../assets/postgres.png";
-import mongodb from "../../assets/mongodb.png";
-import linux from "../../assets/linux.png";
-import vscode from "../../assets/vscode.png";
-import react from "../../assets/react.svg"
+import github from "/assets/githubW.png";
+import git from "/assets/techstack/git.png";
+import node from "/assets/techstack/node.png";
+import javascript from "/assets/techstack/javascript.png";
+import html from "/assets/techstack/html.png";
+import css from "/assets/techstack/css.png";
+import c from "/assets/techstack/c.png";
+import cpp from "/assets/techstack/c++.png";
+import python from "/assets/techstack/python.png";
+import java from "/assets/techstack/java.png";
+import postgres from "/assets/techstack/postgres.png";
+import mongodb from "/assets/techstack/mongodb.png";
+import linux from "/assets/techstack/linux.png";
+import vscode from "/assets/techstack/vscode.png";
+import react from "/assets/techstack/react.svg"
 
 const skills = [
   { name: "GitHub", icon: github },
