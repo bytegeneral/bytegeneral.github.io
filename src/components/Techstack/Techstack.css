@@ -37,7 +37,7 @@
   }
   
   .tech-icon {
-    width: 8rem;
+    width: 6rem;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: grayscale(100%);
   }

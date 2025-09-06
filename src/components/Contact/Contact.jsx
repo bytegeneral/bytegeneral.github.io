@@ -10,11 +10,17 @@ const Contact = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) setAnimate(true);
+        if (entries[0].isIntersecting) {
+          setAnimate(true);
+        } else {
+          setAnimate(false); // reset when out of view
+        }
       },
       { threshold: 0.5 }
     );
+
     if (textRef.current) observer.observe(textRef.current);
+
     return () => {
       if (textRef.current) observer.unobserve(textRef.current);
     };
@@ -22,15 +28,13 @@ const Contact = () => {
 
   return (
     <section className="contact-section" id="contact">
-      
-
       <div className="contact-wrapper">
         {/* Left Info */}
         <div className="contact-info">
           <div className="contact-header">
-        <h2>Contact Me</h2>
-        <p>Let's build something amazing together</p>
-      </div>
+            <h2>Contact Me</h2>
+            <p>Let's build something amazing together</p>
+          </div>
           <p
             ref={textRef}
             className={`contact-text ${animate ? "slide-in" : ""}`}

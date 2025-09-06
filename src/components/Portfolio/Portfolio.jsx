@@ -14,7 +14,7 @@ const fadeUp = {
 
 export default function Portfolio() {
   return (
-    <div className="dashboard-container">
+    <div className="dashboard-container" id="projects">
       <header className="dashboard-header">
         <h1>My Projects</h1>
         <p>A showcase of selected work I've built</p>
@@ -29,7 +29,7 @@ export default function Portfolio() {
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }} // animate every time in view
             custom={i}
             whileHover={{ y: -5 }}
           >

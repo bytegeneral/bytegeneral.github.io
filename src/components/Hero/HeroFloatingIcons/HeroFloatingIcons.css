@@ -1,0 +1,16 @@
+.floating-icons-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Icons won't block clicks */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-icon {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
