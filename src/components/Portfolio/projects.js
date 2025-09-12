@@ -90,4 +90,21 @@ export const projects = [
         { name: "Render", img: "https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white" },      
     ],
   },
+  {
+  name: "DecyphixDNA",
+  desc: "Web app for analyzing DNA sequences and FASTA files: nucleotide composition, codon frequencies, ORFs, reverse complements, and 3D DNA helix visualization.",
+  img: "/assets/projects/decyphixdna.png",
+  link: "https://decyphixdna.onrender.com/",
+  tags: [
+    { name: "React", img: "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" },
+    { name: "Chart.js", img: "https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white" },
+    { name: "Three.js", img: "https://img.shields.io/badge/three.js-%23000000.svg?style=for-the-badge&logo=three.js&logoColor=%23FFFFFF" },
+    { name: "Python", img: "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" },
+    { name: "Flask", img: "https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" },
+    { name: "Biopython", img: "https://img.shields.io/badge/Biopython-009688?style=for-the-badge&logo=python&logoColor=white" },
+
+
+  ],
+}
+
 ];
