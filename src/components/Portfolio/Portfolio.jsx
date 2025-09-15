@@ -18,6 +18,9 @@ export default function Portfolio() {
       <header className="dashboard-header">
         <h1>My Projects</h1>
         <p>A showcase of selected work I've built</p>
+        <p style={{ color: "#ff6961", fontWeight: "bold", marginTop: "1rem" }}>
+          ⚠ {'Most apps are hosted on Render and may take ~50s to load, please be patient.'}
+        </p>
       </header>
 
       {/* Projects Grid */}
