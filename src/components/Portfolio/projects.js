@@ -84,10 +84,13 @@ export const projects = [
     link: "https://billionaireburner.onrender.com/",
     tags: [
         { name: "React", img: "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" },
+        { name: "Node.js", img: "https://img.shields.io/badge/node.js-339933.svg?style=for-the-badge&logo=node.js&logoColor=white" },
         { name: "JavaScript", img: "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" },
         { name: "Bootstrap", img: "https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white" },
         { name: "Vite", img: "https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" },
-        { name: "Render", img: "https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white" },      
+        { name: "Render", img: "https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white" },
+        { name: "Express.js", img: "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" },
+        
     ],
   },
   {
@@ -104,7 +107,24 @@ export const projects = [
     { name: "Biopython", img: "https://img.shields.io/badge/Biopython-009688?style=for-the-badge&logo=python&logoColor=white" },
 
 
+    ],
+  },
+  {
+  name: "TrivIQ",
+  desc: "Fun and interactive quiz platform challenging your knowledge and curiosity. Explore multiple categories, including geography, movies, history, and more",
+  img: "/assets/projects/triviq.png",
+  link: "https://triviq.onrender.com", 
+  tags: [
+    { name: "React", img: "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" },
+    { name: "Vite", img: "https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=FFD62E" },
+    { name: "JavaScript", img: "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" },
+    { name: "JSON", img: "https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" },
+    { name: "Framer Motion", img: "https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" }
   ],
 }
+
+
+
+
 
 ];
