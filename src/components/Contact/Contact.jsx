@@ -51,7 +51,7 @@ const Contact = () => {
               className="social-icon"
               onClick={() =>
                 window.open(
-                  "https://www.linkedin.com/in/giovanni-kassis",
+                  "https://www.linkedin.com/in/",
                   "_blank"
                 )
               }
@@ -61,7 +61,7 @@ const Contact = () => {
               alt="GitHub"
               className="social-icon"
               onClick={() =>
-                window.open("https://www.github.com/g-kassis", "_blank")
+                window.open("https://www.github.com/bytegeneral, "_blank")
               }
             />
           </div>
