@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Hero />
     <About />
-    <Timeline />
+    {/* <Timeline /> */}
     <TechStackSlider />
     {/* <Services /> */}
     <Portfolio />
