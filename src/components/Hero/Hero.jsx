@@ -61,14 +61,14 @@ export default function Hero() {
               src={github}
               alt="GitHub"
               width="40px"
-              onClick={() => window.open("https://github.com/g-kassis", "_blank")}
+              onClick={() => window.open("https://github.com/bytegeneral", "_blank")}
             />
             <img
               className="social-icon"
               src={linkedin}
               alt="LinkedIn"
               width="40px"
-              onClick={() => window.open("https://www.linkedin.com/in/giovanni-kassis", "_blank")}
+              onClick={() => window.open("https://www.linkedin.com/in/", "_blank")}
             />
           </div>
         </motion.div>
