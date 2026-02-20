@@ -8,7 +8,7 @@ const Footer = () => {
         <hr />
         <p className="footer__text">
           © {new Date().getFullYear()} - Designed by{" "}
-          <a href="https://github.com/g-kassis" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/bytegeneral" target="_blank" rel="noopener noreferrer">
             Me
           </a>.
         </p>
